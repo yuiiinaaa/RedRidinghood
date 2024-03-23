@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerInv
   m_EditorClassIdentifier: 
   flowerAmount: 0
+  maxGlow: 10

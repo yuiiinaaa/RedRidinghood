@@ -10,12 +10,21 @@ using System.Runtime.Serialization;
 public class PlayerInventory : ScriptableObject
 {
     public int flowerAmount;
+    public int maxGlow;
 
     public void AddFlowerAmount(int value){
-        flowerAmount += value;
+        if(flowerAmount < maxGlow){
+            flowerAmount += value;
+        }
     }
     public void RemoveFlowerAmount(int value){
-        flowerAmount -= value;
+        if(flowerAmount > 0){
+            flowerAmount -= value;
+        }
+    }
+    public void resetInv(){
+        flowerAmount = 3;
+        maxGlow = 10;
     }
 }
 
