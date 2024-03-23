@@ -5,9 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
     public PlayerInventory inv;
     public GameState State;
+
+    public static List<bool>ch1Trigger = new List<bool>();
+    public static List<bool>ch2Trigger = new List<bool>();
+
+    private static bool insideCutscene;
     //public static event Action<GameState> OnGameStateChanged;
 
     
@@ -17,8 +21,22 @@ public class GameManager : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        insideCutscene = true; 
+        //may need to move to on awake
+        for(int i =0; i< 4; i++){
+            ch1Trigger.Add(false);
+        }
+        ch1Trigger[0] = true;
+
+        //beenTriggered[0] = true;
         UpdateGameState(GameState.StartScreen);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         
     }
 
@@ -39,10 +57,32 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    public void SetTrigger(int num, int indx, bool b){
+        if(num == 1){
+            ch1Trigger[indx] = b;
+        }
+        if(num == 2){
+            ch2Trigger[indx] = b;
+        }
+    }
+
+    public bool GetTrigger(int num, int indx){
+        if(num == 1){
+            return ch1Trigger[indx];
+        }
+        if(num == 2){
+            return ch2Trigger[indx];
+        }
+        return false;
+    }
+
+    public void SetCutsceneTrigger(bool b){
+        insideCutscene = b;
+    }
+
+    public bool GetCutsceneTrigger(){
+        return insideCutscene;
     }
 }
 

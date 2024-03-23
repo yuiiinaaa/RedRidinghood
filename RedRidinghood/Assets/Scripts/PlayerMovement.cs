@@ -25,6 +25,12 @@ public class PlayerMovement : MonoBehaviour
     // setting movement vector and rotation, runs in time with physics loop (?)
     void FixedUpdate()
     {
+        if(!GameManager.Instance.GetCutsceneTrigger()){
+            UpdateMovement();
+        }
+    }
+
+    void UpdateMovement(){
         // getting input from keyboard
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -44,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
         m_Rotation = Quaternion.LookRotation(desiredForward);
 
         transform.position = transform.position + new Vector3(horizontal * movementSpeed * Time.deltaTime, 0f, vertical * movementSpeed * Time.deltaTime); ;
-
     }
 
     // allows applying root motion

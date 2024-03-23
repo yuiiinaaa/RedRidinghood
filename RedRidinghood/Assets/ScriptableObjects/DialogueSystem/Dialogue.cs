@@ -9,18 +9,24 @@ public class Dialogue : MonoBehaviour
     private TextMeshProUGUI hitEnter;
     public float textSpeed;
     public List<DialogueObject>dialogueScript = new List<DialogueObject>();
-    public List<bool>beenTriggered = new List<bool>();
+    //private static List<bool>beenTriggered = new List<bool>();
     private int index;
     private int currentScript;
     private bool isToggled;
+
+    public string currentChapter;
     // Start is called before the first frame update
     void Start()
     {
         isToggled = true;
         currentScript = 0;
+       
         for(int i =0; i< dialogueScript.Count; i++){
-
+            //beenTriggered.Add(false);
         }
+
+        //beenTriggered[0] = true;
+
         textComponent = GetComponentInChildren<TextMeshProUGUI>();
         
         textComponent.text = string.Empty;
@@ -45,14 +51,14 @@ public class Dialogue : MonoBehaviour
             Debug.Log("Enter key is pressed.");
         }
 
-        //this is for testing purposes
-        if (Input.GetKeyDown(KeyCode.W)){
-            isToggled = true;
-            ToggleChildren(true);
-            textComponent.text = string.Empty;
-            StartDialogue();
+        // //this is for testing purposes
+        // if (Input.GetKeyDown(KeyCode.W)){
+        //     isToggled = true;
+        //     ToggleChildren(true);
+        //     textComponent.text = string.Empty;
+        //     StartDialogue();
 
-        }
+        // }
         
     }
 
@@ -70,6 +76,7 @@ public class Dialogue : MonoBehaviour
             //all dialogues are finished
             isToggled = false;
             ToggleChildren(false);
+            GameManager.Instance.SetCutsceneTrigger(false);
             if(currentScript < dialogueScript.Count - 1){
                 currentScript++;
                 Debug.Log(currentScript);
@@ -102,4 +109,16 @@ public class Dialogue : MonoBehaviour
             child.gameObject.SetActive(activeState);
         }
 }
+
+    void Chapter1Triggers(){
+        if(GameManager.Instance.GetTrigger(1,1)){
+            isToggled = true;
+            ToggleChildren(true);
+            GameManager.Instance.SetCutsceneTrigger(true);
+            textComponent.text = string.Empty;
+            StartDialogue();
+        }
+        //GameManager.Instance.setTrigger
+
+    }
 }
