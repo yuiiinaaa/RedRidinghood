@@ -10,6 +10,7 @@ using System.Runtime.Serialization;
 public class DialogueObject : ScriptableObject
 {
     public string name;
+    public bool isTriggered;
     [TextArea(15,10)]
     public List<string> Lines = new List<string>();
     // Start is called before the first frame update

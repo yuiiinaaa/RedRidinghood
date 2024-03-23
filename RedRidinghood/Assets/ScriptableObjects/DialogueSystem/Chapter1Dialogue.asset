@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Chapter1Dialogue
   m_EditorClassIdentifier: 
   name: Tutorial
+  isTriggered: 1
   Lines:
-  - "Go to grandma\u2019s house to deliver the cake and wine, but stay on the path!\n"
-  - 'Explore using the controls WASD. Oh, look at that glowflower on the path!
-
-
-'
-  - 'Glow flowers reflect your knowledge of the world and growth level.
-
-'
+  - Hello little one, what are you doing here in the middle of nowhere?
+  - "\u2026 I see, your mother told you to bring food to your sick grandmother? Well
+    that may be a bit tricky given the uncertainty of this forest. "
+  - "Why don\u2019t I help you out on your quest? It is easy to get lost out here
+    if you are not careful. "
+  - 'Start by exploring the controls WASD to get used to walking around. '
