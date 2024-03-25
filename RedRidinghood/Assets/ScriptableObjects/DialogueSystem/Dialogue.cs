@@ -47,9 +47,10 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = dialogueScript[currentScript].Lines[index];
             }
             
-            // Enter key is pressed
-            Debug.Log("Enter key is pressed.");
+            
         }
+
+        Chapter1Triggers();
 
         // //this is for testing purposes
         // if (Input.GetKeyDown(KeyCode.W)){
@@ -102,6 +103,7 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+
     void ToggleChildren(bool activeState)
     {
         foreach (Transform child in transform)
@@ -111,14 +113,18 @@ public class Dialogue : MonoBehaviour
 }
 
     void Chapter1Triggers(){
-        if(GameManager.Instance.GetTrigger(1,1)){
+        if((GameManager.Instance.GetTrigger(1,1))&& (isToggled == false)){
             isToggled = true;
             ToggleChildren(true);
             GameManager.Instance.SetCutsceneTrigger(true);
             textComponent.text = string.Empty;
+            
             StartDialogue();
+            
         }
         //GameManager.Instance.setTrigger
 
     }
+
+
 }
