@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerTrig : MonoBehaviour
 {
     public PlayerInventory inv;
-    private static bool firstMovementPressed;
-    private static bool firstFlower;
+    private bool firstMovementPressed;
+    private bool firstFlower;
     void Start(){
         firstMovementPressed = false;
         firstFlower = false;
@@ -27,7 +27,7 @@ public class PlayerTrig : MonoBehaviour
 
             if(!firstFlower){
                 firstFlower = true;
-                GameManager.Instance.SetTrigger(1,2,true);
+                StartCoroutine(DelayThenReturnTrue(.2f, 1, 2));
             }
 
 

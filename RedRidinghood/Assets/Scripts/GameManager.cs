@@ -84,6 +84,20 @@ public class GameManager : MonoBehaviour
     public bool GetCutsceneTrigger(){
         return insideCutscene;
     }
+
+    public void OnApplicationQuit()
+    {
+        // Reset all bools in the lists when the application quits
+        for(int i = 0; i < ch1Trigger.Count; i++)
+        {
+            ch1Trigger[i] = false;
+        }
+
+        for(int i = 0; i < ch2Trigger.Count; i++)
+        {
+            ch2Trigger[i] = false;
+        }
+    }
 }
 
 public enum GameState{
