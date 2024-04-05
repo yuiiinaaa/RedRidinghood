@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public PlayerInventory inv;
     public GameState State;
 
+    private bool togInteractor = false;
+
     public static List<bool>ch1Trigger = new List<bool>();
     public static List<bool>ch2Trigger = new List<bool>();
 
@@ -85,6 +87,14 @@ public class GameManager : MonoBehaviour
         return insideCutscene;
     }
 
+    public void ToggleInteractor(bool b){
+        togInteractor = b;
+    }
+
+     public bool GetToggleInteractor(){
+        return togInteractor;
+    }
+
     public void OnApplicationQuit()
     {
         // Reset all bools in the lists when the application quits
@@ -98,6 +108,8 @@ public class GameManager : MonoBehaviour
             ch2Trigger[i] = false;
         }
     }
+
+    
 }
 
 public enum GameState{
