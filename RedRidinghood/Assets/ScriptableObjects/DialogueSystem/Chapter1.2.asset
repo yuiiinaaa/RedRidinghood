@@ -16,11 +16,6 @@ MonoBehaviour:
   isTriggered: 0
   Lines:
   - "You have just collected your first glow flower. Collecting glow flowers will
-    fill up your glow meter, which you can see at the top left hand corner. \n\n\n\n"
-  - 'The glow meter is a reflection of your purity and growth. As you traverse on
-    your journey, you may need to sacrifice a bit of your glow power to light up
-    areas around the world.
-
-
-'
-  - Up ahead is a glow beacon. Walk ahead and press E to interact with it.
+    fill up your glow meter, which you can see at the top left. \n\n\n\n"
+  - "Since it is easy to get lost out here, you can replant flowers by pressing \u201CP\u201D.
+    Then, you can always find your way back! Go ahead and try replanting a glow flower. "

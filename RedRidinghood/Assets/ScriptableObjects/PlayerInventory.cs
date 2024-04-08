@@ -23,7 +23,7 @@ public class PlayerInventory : ScriptableObject
         }
     }
     public void resetInv(){
-        flowerAmount = 3;
+        flowerAmount = 1;
         maxGlow = 10;
     }
 }
