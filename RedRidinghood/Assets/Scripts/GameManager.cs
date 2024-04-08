@@ -107,6 +107,8 @@ public class GameManager : MonoBehaviour
         {
             ch2Trigger[i] = false;
         }
+
+        inv.resetInv();
     }
 
     

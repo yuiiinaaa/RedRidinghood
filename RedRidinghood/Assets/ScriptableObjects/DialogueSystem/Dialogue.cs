@@ -119,6 +119,7 @@ public class Dialogue : MonoBehaviour
 }
 
     void Chapter1Triggers(){
+       
         if((GameManager.Instance.GetTrigger(1,1))&& (isToggled == false) && currentScript == 1){
             isToggled = true;
             ToggleChildren(true);
@@ -128,11 +129,11 @@ public class Dialogue : MonoBehaviour
             StartDialogue();
 
             //maybe?
-            GameManager.Instance.SetTrigger(1,1,false);
+            //GameManager.Instance.SetTrigger(1,1,false);
 
         }
 
-        if((GameManager.Instance.GetTrigger(1,2))&& (isToggled == false)){
+        if((GameManager.Instance.GetTrigger(1,2))&& (isToggled == false)&& currentScript == 2){
             isToggled = true;
             ToggleChildren(true);
             GameManager.Instance.SetCutsceneTrigger(true);
@@ -140,7 +141,18 @@ public class Dialogue : MonoBehaviour
             
             StartDialogue();
 
-            GameManager.Instance.SetTrigger(1,2,false);
+            //GameManager.Instance.SetTrigger(1,2,false); 
+        }
+
+        if((GameManager.Instance.GetTrigger(1,3))&& (isToggled == false)&& currentScript == 3){
+            isToggled = true;
+            ToggleChildren(true);
+            GameManager.Instance.SetCutsceneTrigger(true);
+            textComponent.text = string.Empty;
+            
+            StartDialogue();
+
+            GameManager.Instance.SetTrigger(1,3,false);
             
         }
         //GameManager.Instance.setTrigger
