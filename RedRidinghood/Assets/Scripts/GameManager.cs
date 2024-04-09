@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {   
         insideCutscene = true; 
         //may need to move to on awake
-        for(int i =0; i< 4; i++){
+        for(int i =0; i< 10; i++){
             ch1Trigger.Add(false);
         }
         ch1Trigger[0] = true;
