@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private static bool insideCutscene;
     //public static event Action<GameState> OnGameStateChanged;
+    private GameObject instantiatedCanvas;
 
     
 
@@ -33,12 +34,20 @@ public class GameManager : MonoBehaviour
 
         //beenTriggered[0] = true;
         UpdateGameState(GameState.StartScreen);
+        instantiatedCanvas = null;
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Check if the player pressed the Escape key
+        if (Input.GetKeyDown(KeyCode.Escape) && instantiatedCanvas != null)
+        {
+            // Destroy the instantiated canvas and its children
+            Destroy(instantiatedCanvas);
+            instantiatedCanvas = null;
+        }
         
     }
 
@@ -56,6 +65,10 @@ public class GameManager : MonoBehaviour
         }
 
         //OnGameStateChanged?.Invoke(newstate);
+
+    }
+    public void setCanvasNote(GameObject note){
+        instantiatedCanvas = note;
 
     }
 
