@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour, IInteractable
 {
+    public PlayerInventory inv;
+    public AudioClip interactSound;
     private GameObject glowObject;
     private GameObject darkObject;
     [SerializeField] private string _prompt;
@@ -12,11 +14,18 @@ public class Checkpoint : MonoBehaviour, IInteractable
     public bool Interact(Interactor interactor){
         if (glowObject != null && darkObject != null)
         {
-            // Toggle the active state of the objects
-            glowObject.SetActive(true);
-            darkObject.SetActive(false);
-
-            Debug.Log("Toggle Checkpoint!");
+            if(inv.flowerAmount >=5){
+                inv.RemoveFlowerAmount(5);
+                // Toggle the active state of the objects
+                glowObject.SetActive(true);
+                darkObject.SetActive(false);
+                AudioSource.PlayClipAtPoint(interactSound, transform.position);
+                Debug.Log("Toggle Checkpoint!");
+                GameManager.Instance.SetTrigger(1, 4,true);
+            }else{
+                Debug.Log("Not enough flowers!");
+            }
+            
             return true;
         }
         else

@@ -155,6 +155,18 @@ public class Dialogue : MonoBehaviour
             GameManager.Instance.SetTrigger(1,3,false);
             
         }
+
+        if((GameManager.Instance.GetTrigger(1,4))&& (isToggled == false)&& currentScript == 4){
+            isToggled = true;
+            ToggleChildren(true);
+            GameManager.Instance.SetCutsceneTrigger(true);
+            textComponent.text = string.Empty;
+            
+            StartDialogue();
+
+            GameManager.Instance.SetTrigger(1,4,false);
+            
+        }
         //GameManager.Instance.setTrigger
 
     }

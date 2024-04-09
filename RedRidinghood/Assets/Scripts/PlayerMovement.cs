@@ -45,9 +45,28 @@ public class PlayerMovement : MonoBehaviour
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
 
+
+        //Dasol trying things
+        if(vertical > 0)
+        {
+            m_Animator.SetBool("Forward", true);
+        } else
+        {
+            m_Animator.SetBool("Forward", false);
+        }
+        if (horizontal > 0)
+        {
+            m_Animator.SetFloat("Side", horizontal);
+        }
+        if (horizontal < 0)
+        {
+            m_Animator.SetFloat("Side", horizontal);
+        }
+
+
         // creating rotation for player
-        // Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
-        // m_Rotation = Quaternion.LookRotation(desiredForward);
+        //Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
+        //m_Rotation = Quaternion.LookRotation(desiredForward);
 
         transform.position = transform.position + new Vector3(horizontal * movementSpeed * Time.deltaTime, 0f, vertical * movementSpeed * Time.deltaTime); ;
     }
