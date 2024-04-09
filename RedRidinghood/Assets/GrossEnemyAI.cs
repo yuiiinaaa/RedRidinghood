@@ -160,7 +160,7 @@ public class GrossEnemyAI : MonoBehaviour
 
     void CaughtPlayer()
     {
-        m_CaughtPlayer |= true;
+        m_CaughtPlayer = true;
     }
 
     void LookingPLayer(Vector3 player)

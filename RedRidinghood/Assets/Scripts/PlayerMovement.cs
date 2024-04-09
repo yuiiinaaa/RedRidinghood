@@ -46,8 +46,8 @@ public class PlayerMovement : MonoBehaviour
         m_Animator.SetBool("IsWalking", isWalking);
 
         // creating rotation for player
-        Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
-        m_Rotation = Quaternion.LookRotation(desiredForward);
+        // Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
+        // m_Rotation = Quaternion.LookRotation(desiredForward);
 
         transform.position = transform.position + new Vector3(horizontal * movementSpeed * Time.deltaTime, 0f, vertical * movementSpeed * Time.deltaTime); ;
     }
