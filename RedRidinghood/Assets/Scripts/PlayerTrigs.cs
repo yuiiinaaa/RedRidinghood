@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerTrig : MonoBehaviour
 {
     public PlayerInventory inv;
-        public GameObject prefabFlower;
+    public GameObject prefabFlower;
     private bool firstMovementPressed;
     private bool firstFlower;
     private bool firstPlant;
+    public AudioClip interactSoundP;
     void Start(){
         firstMovementPressed = false;
         firstFlower = false;
@@ -86,6 +87,11 @@ public class PlayerTrig : MonoBehaviour
             // Instantiate the prefab at the current position and rotation of this GameObject
             Vector3 transPos = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
             GameObject spawnedObject = Instantiate(prefabFlower, transPos, Quaternion.identity);
+
+            if (interactSoundP != null)
+            {
+                AudioSource.PlayClipAtPoint(interactSoundP, transform.position);
+            }
         }
         else{
             Debug.LogWarning("Prefab to spawn is not assigned!");
