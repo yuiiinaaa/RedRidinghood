@@ -453,6 +453,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 62860823420055921, guid: 3fe020b645f4eb54193ed94c237650e4,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 62860823420055921, guid: 3fe020b645f4eb54193ed94c237650e4,
+        type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -511,12 +516,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1060913812048096209, guid: 3fe020b645f4eb54193ed94c237650e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060913812048096209, guid: 3fe020b645f4eb54193ed94c237650e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060913812048096209, guid: 3fe020b645f4eb54193ed94c237650e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4538609235166612624, guid: 3fe020b645f4eb54193ed94c237650e4,
         type: 3}
       propertyPath: interactSoundP
       value: 
       objectReference: {fileID: 8300000, guid: bdb426dcf8f11428f8fac3f0f3dea600, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 299122269863659356, guid: 3fe020b645f4eb54193ed94c237650e4, type: 3}
+    - {fileID: 3725984891440288613, guid: 3fe020b645f4eb54193ed94c237650e4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2414,6 +2436,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: acdd36a7da07d4126879fbe8b1129b4e, type: 2}
   - {fileID: 11400000, guid: 88ba6c0e2b81744b0b9c91d221794238, type: 2}
   - {fileID: 11400000, guid: b0c9ebc57539b43cdab70de4887cbac0, type: 2}
+  - {fileID: 11400000, guid: 5fecee1033e424f838c58d1e201e919c, type: 2}
   currentChapter: 
 --- !u!1001 &1590741226
 PrefabInstance:
