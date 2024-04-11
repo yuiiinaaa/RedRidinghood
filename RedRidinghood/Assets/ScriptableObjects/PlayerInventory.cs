@@ -24,7 +24,7 @@ public class PlayerInventory : ScriptableObject
         }
     }
     public void FoundNote(int id){
-        //notesList[id].hasBeenFound = true;
+        notesList[id].hasBeenFound = true;
     }
     public void resetInv(){
         flowerAmount = 1;

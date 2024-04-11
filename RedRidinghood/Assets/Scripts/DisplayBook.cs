@@ -17,18 +17,40 @@ public class DisplayBook : MonoBehaviour
     private GameObject leftNoteImage;
     private GameObject rightNoteImage;
 
+    private GameObject leftButton;
+    private GameObject rightButton;
+
     // Start is called before the first frame update
     void Start()
     {
         itemsDisplayed.Clear();
-        transparencyToggled = true;
+        transparencyToggled = false;
         parentImage = GetComponent<Image>();
         currentPage = 0;
         leftNoteImage = null;
         rightNoteImage = null;
 
+        //getbuttons
+        // Access the parent GameObject's transform
+        Transform parentTransform = this.transform;
+
+        // Accessing child GameObjects by index
+        if (parentTransform != null)
+        {
+            if (parentTransform.childCount >= 2)
+            {
+                // Access the first child GameObject (right object)
+                leftButton = parentTransform.GetChild(0).gameObject;
+                // Access the second child GameObject (left object)
+                rightButton = parentTransform.GetChild(1).gameObject;                     
+            } 
+        }
+        
+
         //leave this here for testing for now
         updateDisplay();
+
+        ToggleTransparency();     
     }
 
     // Update is called once per frame
@@ -37,32 +59,53 @@ public class DisplayBook : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleTransparency();
+            updateDisplay();
         }
     }
 
-    private void updateDisplay(){
-        if(leftNoteImage != null){
-            Destroy(leftNoteImage);
-        }
-        if(rightNoteImage != null){
-            Destroy(rightNoteImage);
-        }
-
-        //for(int i = 0; i < inv.notesList.Count; i++){
-            if(inv.notesList[currentPage].hasBeenFound == true){
-                Vector3 position = new Vector3(-116, 10, 0f);
-                // Instantiate the prefab at the specified position
-                leftNoteImage = Instantiate(inv.notesList[currentPage].prefab, position, Quaternion.identity);   
-            }
-            if(inv.notesList[currentPage+1].hasBeenFound == true){
-                Vector3 position = new Vector3(116, 10, 0f);
-                // Instantiate the prefab at the specified position
-                rightNoteImage = Instantiate(inv.notesList[currentPage+1].prefab, position, Quaternion.identity);   
-            }   
-    //}
+    private void updateDisplay()
+{
+    // Destroy previous note images
+    if (leftNoteImage != null)
+    {
+        Destroy(leftNoteImage);
+    }
+    if (rightNoteImage != null)
+    {
+        Destroy(rightNoteImage);
     }
 
-    private void PageLeft(){
+    // Instantiate new note images
+    if (inv.notesList[currentPage].hasBeenFound)
+    {
+        Vector3 position = new Vector3(-116, 10, 0f);
+        // Instantiate the prefab at the specified position
+        leftNoteImage = Instantiate(inv.notesList[currentPage].prefab, this.transform);
+        leftNoteImage.GetComponent<RectTransform>().localPosition = position;
+    }
+    if (inv.notesList.Count > currentPage + 1 && inv.notesList[currentPage + 1].hasBeenFound)
+    {
+        Vector3 position2 = new Vector3(116, 10, 0f);
+        // Instantiate the prefab at the specified position
+        rightNoteImage = Instantiate(inv.notesList[currentPage + 1].prefab, this.transform);
+        rightNoteImage.GetComponent<RectTransform>().localPosition = position2;
+    }
+
+    if(currentPage <= 1){
+        rightButton.SetActive(false);
+
+    }else{
+        rightButton.SetActive(true);
+    }
+
+    if(currentPage>=inv.notesList.Count-2){
+        leftButton.SetActive(false);
+    }else{
+        leftButton.SetActive(true);
+    }
+}
+
+    public void PageLeft(){
         currentPage -= 2;
         if(currentPage<0){
             currentPage = 0;
@@ -70,7 +113,7 @@ public class DisplayBook : MonoBehaviour
         updateDisplay();
     }
 
-    private void PageRight(){
+    public void PageRight(){
         //unsure if this logic is correct...
         currentPage += 2;
         if(currentPage>=inv.notesList.Count-2){
@@ -86,6 +129,9 @@ public class DisplayBook : MonoBehaviour
 
     public void ToggleTransparency()
     {
+        if(transparencyToggled == true){
+            updateDisplay();
+        }
         transparencyToggled = !transparencyToggled;
 
         // Set transparency for the parent image
