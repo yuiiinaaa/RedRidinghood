@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Check if the player pressed the Escape key
-        if (Input.GetKeyDown(KeyCode.Escape) && instantiatedCanvas != null)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && instantiatedCanvas != null)
         {
             // Destroy the instantiated canvas and its children
             Destroy(instantiatedCanvas);
