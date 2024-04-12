@@ -14,7 +14,7 @@ public class DisableUIImage : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.Instance.GetToggleInteractor() == true){
+        if(GameManager.Instance.GetToggleInteractor() == true && !GameManager.Instance.GetCutsceneTrigger()){
             imageComponent.enabled = true;
 
         }else{

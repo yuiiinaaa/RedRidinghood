@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerInv
   m_EditorClassIdentifier: 
   notesList:
+  - {fileID: 11400000, guid: ddd5ad7421a27452681f9c20b0cce666, type: 2}
   - {fileID: 11400000, guid: b623c3942502b40209fd7da48592a9d8, type: 2}
   - {fileID: 11400000, guid: f2c62dae2b55a4138a264ee2d2d390fa, type: 2}
   - {fileID: 11400000, guid: b440a8f1dfe5c426eb2111f8a5f92dc3, type: 2}

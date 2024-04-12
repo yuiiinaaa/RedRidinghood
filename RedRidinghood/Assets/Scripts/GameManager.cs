@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public static List<bool>ch1Trigger = new List<bool>();
     public static List<bool>ch2Trigger = new List<bool>();
 
+    public static List<bool>gatesUnlocked = new List<bool>();
+
     private static bool insideCutscene;
     //public static event Action<GameState> OnGameStateChanged;
     private GameObject instantiatedCanvas;
@@ -30,6 +32,10 @@ public class GameManager : MonoBehaviour
         for(int i =0; i< 10; i++){
             ch1Trigger.Add(false);
         }
+
+        for(int i =0; i< 10; i++){
+            gatesUnlocked.Add(false);
+        }
         ch1Trigger[0] = true;
 
         //beenTriggered[0] = true;
@@ -41,12 +47,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if (instantiatedCanvas != null){
+        //     insideCutscene = true;
+        // }else{
+        //     insideCutscene = false;
+        // }
+
         // Check if the player pressed the Escape key
-        if (Input.GetKeyDown(KeyCode.Mouse0) && instantiatedCanvas != null)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && instantiatedCanvas != null)
         {
             // Destroy the instantiated canvas and its children
             Destroy(instantiatedCanvas);
             instantiatedCanvas = null;
+            insideCutscene = false;
         }
         
     }
@@ -90,6 +103,13 @@ public class GameManager : MonoBehaviour
             return ch2Trigger[indx];
         }
         return false;
+    }
+
+    public void SetGateUnlock(int indx, bool b){
+        gatesUnlocked[indx] = b;   
+    }
+    public bool GetGateUnlock(int indx){
+        return gatesUnlocked[indx];   
     }
 
     public void SetCutsceneTrigger(bool b){
