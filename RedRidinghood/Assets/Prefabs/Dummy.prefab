@@ -192,6 +192,7 @@ MonoBehaviour:
   inv: {fileID: 11400000, guid: 4499db52ece81445ca6e33909f8f07b6, type: 2}
   prefabFlower: {fileID: 1809037554609748060, guid: 7d7d09999ca9f4ccda2f08f87354c739,
     type: 3}
+  interactSoundP: {fileID: 0}
 --- !u!114 &4933335366167103600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,6 +491,7 @@ GameObject:
   - component: {fileID: 1060913812048096209}
   - component: {fileID: 5125359178298465639}
   - component: {fileID: 3945196111500489695}
+  - component: {fileID: 7735065869843463832}
   m_Layer: 0
   m_Name: RRHWalk1
   m_TagString: Untagged
@@ -585,3 +587,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7735065869843463832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088319276499786030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bba2109fd058e94d94309bf21408c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 20
