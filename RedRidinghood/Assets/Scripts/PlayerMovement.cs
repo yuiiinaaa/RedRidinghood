@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Animator m_Animator;
     Quaternion m_Rotation = Quaternion.identity;  // for storing rotation of player: default set as no rotation 
     Rigidbody m_Rigidbody;
+    AudioSource audioData;
 
     //movement speed in units per second
     private float movementSpeed = 5f;
@@ -43,10 +44,19 @@ public class PlayerMovement : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
 
         bool isWalking = hasHorizontalInput || hasVerticalInput;
-        m_Animator.SetBool("IsWalking", isWalking);
+        //m_Animator.SetBool("IsWalking", isWalking);
+        
+
+        //Dasol trying to add walking sfx
+        if (isWalking)
+        {
+            audioData = GetComponent<AudioSource>();
+            audioData.Play(0);
+            Debug.Log("iswalking");
+        }
 
 
-        //Dasol trying things
+        //Dasol trying things to get it to move
         if(vertical > 0)
         {
             m_Animator.SetBool("Forward", true);
@@ -80,4 +90,6 @@ public class PlayerMovement : MonoBehaviour
         // apply rotation: directly setting new rotation
         m_Rigidbody.MoveRotation(m_Rotation);
     }
+
+    
 }
