@@ -14,12 +14,16 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed = 5f;
 
     public float turnSpeed = 20f;
+    //public bool Forward = false;
+    //public float Side = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
+
+        //m_Animator.SetBool("Forward", false);
     }
 
     // FixedUpdate is called before physics system solves any collisions/interactions
@@ -66,11 +70,22 @@ public class PlayerMovement : MonoBehaviour
         }
         if (horizontal > 0)
         {
-            m_Animator.SetFloat("Side", horizontal);
+            m_Animator.SetBool("Right", true);
+            //Side = horizontal;
+            //m_Animator.SetFloat("Side", 1);
+            //m_Animator.SetFloat("Side", horizontal);
+        } else
+        {
+            m_Animator.SetBool("Right", false);
         }
         if (horizontal < 0)
         {
-            m_Animator.SetFloat("Side", horizontal);
+            m_Animator.SetBool("Left", true);
+            //Side = horizontal;
+            //m_Animator.SetFloat("Side", -1);
+        } else
+        {
+            m_Animator.SetBool("Left", false);
         }
 
 
