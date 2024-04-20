@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed = 5f;
 
     public float turnSpeed = 20f;
+    public bool left = false;
     //public bool Forward = false;
     //public float Side = 0;
 
@@ -81,19 +82,28 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal < 0)
         {
             m_Animator.SetBool("Left", true);
+            //left = true;
+            m_Rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
             //Side = horizontal;
             //m_Animator.SetFloat("Side", -1);
         } else
         {
             m_Animator.SetBool("Left", false);
+            m_Rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
 
-
+        
         // creating rotation for player
         //Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         //m_Rotation = Quaternion.LookRotation(desiredForward);
-
-        transform.position = transform.position + new Vector3(horizontal * movementSpeed * Time.deltaTime, 0f, vertical * movementSpeed * Time.deltaTime); ;
+        //if (left)
+        //{
+        //    m_Rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
+        //} else
+        //{
+            
+        //}
+        transform.position = transform.position + new Vector3(horizontal * movementSpeed * Time.deltaTime, 0f, vertical * movementSpeed * Time.deltaTime); 
     }
 
     // allows applying root motion
