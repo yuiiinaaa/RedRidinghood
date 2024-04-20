@@ -45,6 +45,11 @@ public class Padlock : MonoBehaviour
         if(isUnlocked==true){
             GameManager.Instance.SetGateUnlock(lockNum, true);
         } 
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            // Destroy the instantiated canvas and its children
+            Destroy(gameObject);
+        }
     }
 
     public void SaveInputToList(string str2)

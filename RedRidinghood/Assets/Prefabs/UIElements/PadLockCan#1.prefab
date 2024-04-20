@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7060862582452385362}
   - component: {fileID: 6734765252329151052}
   m_Layer: 0
-  m_Name: PadLockCanvas
+  m_Name: PadLockCan#1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
