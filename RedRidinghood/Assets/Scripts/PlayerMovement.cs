@@ -8,15 +8,19 @@ public class PlayerMovement : MonoBehaviour
     Animator m_Animator;
     Quaternion m_Rotation = Quaternion.identity;  // for storing rotation of player: default set as no rotation 
     Rigidbody m_Rigidbody;
-    AudioSource audioData;
+    //AudioSource audioData;
+    AudioSource walkSound;
 
     //movement speed in units per second
     private float movementSpeed = 5f;
 
     public float turnSpeed = 20f;
-    public bool left = false;
-    //public bool Forward = false;
-    //public float Side = 0;
+    //public bool left = false;
+    //public AudioClip walkSound;
+
+    //public bool walkPlay;
+    public bool walkToggle;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
 
+        walkSound = GetComponent<AudioSource>();
+        //walkPlay = false;
         //m_Animator.SetBool("Forward", false);
     }
 
@@ -53,11 +59,17 @@ public class PlayerMovement : MonoBehaviour
         
 
         //Dasol trying to add walking sfx
-        if (isWalking)
+        if (isWalking && walkToggle == false)
         {
-            audioData = GetComponent<AudioSource>();
-            audioData.Play(0);
+            walkSound.Play();
+            walkToggle = true;
+            //AudioSource.PlayClipAtPoint(walkSound, transform.position);
             Debug.Log("iswalking");
+        }
+        if (!isWalking)
+        {
+            walkSound.Stop();
+            walkToggle = false;
         }
 
 
@@ -72,9 +84,7 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal > 0)
         {
             m_Animator.SetBool("Right", true);
-            //Side = horizontal;
-            //m_Animator.SetFloat("Side", 1);
-            //m_Animator.SetFloat("Side", horizontal);
+ 
         } else
         {
             m_Animator.SetBool("Right", false);
@@ -84,8 +94,7 @@ public class PlayerMovement : MonoBehaviour
             m_Animator.SetBool("Left", true);
             //left = true;
             m_Rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
-            //Side = horizontal;
-            //m_Animator.SetFloat("Side", -1);
+
         } else
         {
             m_Animator.SetBool("Left", false);
