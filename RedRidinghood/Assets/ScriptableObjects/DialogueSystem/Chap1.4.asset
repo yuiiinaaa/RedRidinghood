@@ -15,6 +15,10 @@ MonoBehaviour:
   name: 
   isTriggered: 0
   Lines:
-  - 'Nice job. You should now have the basics of what it takes to survive on your
-    journey. The path to your destination may be unclear, but if you follow your
-    heart, the correct path may draw near. '
+  - Nice job. You should now have the basics of what it takes to survive on your
+    journey.
+  - By the way, I left some notes around that may be of some help, but I am unsure
+    where they are. You can find all the notes you have collected by opening your
+    journal.
+  - The path to your destination may be unclear, but if you follow your heart, the
+    correct path may draw near. Be brave, and may we meet again soon.
