@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
 
         walkSound = GetComponent<AudioSource>();
-        //walkPlay = false;
+        walkToggle = false;
         //m_Animator.SetBool("Forward", false);
     }
 
