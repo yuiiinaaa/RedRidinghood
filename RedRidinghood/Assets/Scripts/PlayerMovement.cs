@@ -81,6 +81,16 @@ public class PlayerMovement : MonoBehaviour
         {
             m_Animator.SetBool("Forward", false);
         }
+        if (vertical < 0)
+        {
+            m_Animator.SetBool("Towards", true);
+        }
+        else
+        {
+            m_Animator.SetBool("Towards", false);
+        }
+
+
         if (horizontal > 0)
         {
             m_Animator.SetBool("Right", true);
