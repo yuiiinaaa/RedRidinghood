@@ -832,6 +832,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4113900256479081578, guid: 3fe020b645f4eb54193ed94c237650e4,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8334c42d825cc4dc29d285c90f411210, type: 3}
     - target: {fileID: 4538609235166612624, guid: 3fe020b645f4eb54193ed94c237650e4,
         type: 3}
       propertyPath: interactSoundP
