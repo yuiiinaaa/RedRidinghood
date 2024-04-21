@@ -10,6 +10,7 @@ public class LockInteract : MonoBehaviour, IInteractable
     public GameObject prefabU;
     public AudioClip interactSoundE; // Sound effect to play when interacted with
     private GameObject instantiatedCanvas; // Reference to the instantiated canvas
+    //private GameObject instantiatedChild; // Reference to the instantiated canvas
 
     private Padlock childScript;
 
@@ -21,6 +22,7 @@ public class LockInteract : MonoBehaviour, IInteractable
         if(!GameManager.Instance.GetGateUnlock(lockID)){
             if(prefabL != null){
                 instantiatedCanvas = Instantiate(prefabL);
+                //instantiatedChild = instantiatedCanvas.transform.GetChild(1).GetComponent<GameObject>();
                 childScript = instantiatedCanvas.transform.GetChild(1).GetComponent<Padlock>();
                 childScript.SetLockNum(lockID);
 
@@ -48,10 +50,11 @@ public class LockInteract : MonoBehaviour, IInteractable
     {
         if (instantiatedCanvas != null){
             GameManager.Instance.SetCutsceneTrigger(true);
-        }
 
-        if(GameManager.Instance.GetGateUnlock(lockID)){
+            if(GameManager.Instance.GetGateUnlock(lockID)){
             Destroy(instantiatedCanvas);
+            GameManager.Instance.setCanvasNote(null);
+            //Destroy(instantiatedChild);
 
             if (interactSoundE != null)
             {
@@ -62,6 +65,9 @@ public class LockInteract : MonoBehaviour, IInteractable
             GameManager.Instance.setCanvasNote(instantiatedCanvas);
             Destroy(gameObject);
         }
+        }
+
+        
 
         
     }
