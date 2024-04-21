@@ -125,7 +125,7 @@ MonoBehaviour:
   lockID: 0
   prefabL: {fileID: 1565705187353193041, guid: 4d616941d342e4c1bbbdaf03b3010b7f, type: 3}
   prefabU: {fileID: 39978936282133314, guid: 93c814ced12ef47f2a2c6efa99a18ec7, type: 3}
-  interactSoundE: {fileID: 0}
+  interactSoundE: {fileID: 8300000, guid: 3299fc9a2b2294826b9c3861f46fafcd, type: 3}
 --- !u!1 &6655679111812775931
 GameObject:
   m_ObjectHideFlags: 0

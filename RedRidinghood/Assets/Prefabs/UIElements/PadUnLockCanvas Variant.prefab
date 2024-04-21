@@ -93,6 +93,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PadUnLockCanvas Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6287438075626369956, guid: 4d616941d342e4c1bbbdaf03b3010b7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8629009228370146944, guid: 4d616941d342e4c1bbbdaf03b3010b7f,
         type: 3}
       propertyPath: m_Pivot.x
