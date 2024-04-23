@@ -10,16 +10,15 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody m_Rigidbody;
     //AudioSource audioData;
     AudioSource walkSound;
+    public float velocity = 20f;
+
 
     //movement speed in units per second
     private float movementSpeed = 5f;
 
     public float turnSpeed = 20f;
-    //public bool left = false;
-    //public AudioClip walkSound;
-
-    //public bool walkPlay;
     public bool walkToggle;
+    SpriteRenderer sr;
 
 
     // Start is called before the first frame update
@@ -30,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
         walkSound = GetComponent<AudioSource>();
         walkToggle = false;
+        sr = GetComponent<SpriteRenderer>();
         //m_Animator.SetBool("Forward", false);
     }
 
@@ -102,27 +102,17 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal < 0)
         {
             m_Animator.SetBool("Left", true);
-            //left = true;
-            m_Rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
+            sr.flipX = true;
+  
 
         } else
         {
             m_Animator.SetBool("Left", false);
-            m_Rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            sr.flipX = false;
+  
         }
 
-        
-        // creating rotation for player
-        //Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
-        //m_Rotation = Quaternion.LookRotation(desiredForward);
-        //if (left)
-        //{
-        //    m_Rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
-        //} else
-        //{
-            
-        //}
-        transform.position = transform.position + new Vector3(horizontal * movementSpeed * Time.deltaTime, 0f, vertical * movementSpeed * Time.deltaTime); 
+        m_Rigidbody.velocity = new Vector3(horizontal, 0, vertical);
     }
 
     // allows applying root motion

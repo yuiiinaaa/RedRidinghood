@@ -1960,6 +1960,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dummy
       objectReference: {fileID: 0}
+    - target: {fileID: 455363117134766979, guid: 3fe020b645f4eb54193ed94c237650e4,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 455363117134766979, guid: 3fe020b645f4eb54193ed94c237650e4,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1045332255444908382, guid: 3fe020b645f4eb54193ed94c237650e4,
         type: 3}
       propertyPath: m_LocalPosition.x
