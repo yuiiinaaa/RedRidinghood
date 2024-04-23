@@ -73,9 +73,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &1848167770276806020
 MonoBehaviour:
@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bba2109fd058e94d94309bf21408c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: 20
   turnSpeed: 20
   walkToggle: 0
 --- !u!95 &20180129986508744
@@ -283,7 +284,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 417cf6635e43f4ff8bc8658659009bf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b89a1d39d1953649a37920e97deb340, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
