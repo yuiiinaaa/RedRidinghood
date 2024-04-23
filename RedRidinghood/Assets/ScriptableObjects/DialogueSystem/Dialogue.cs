@@ -53,7 +53,7 @@ public class Dialogue : MonoBehaviour
     {
         //display choices if dialogue reaches the last box
         //...
-        if(textComponent.text == dialogueScript[currentScript].Lines[0] && (dialogueScript[currentScript].hasChoice == true) && choicesToggled ==false){
+        if(textComponent.text == dialogueScript[currentScript].Lines[0] && (dialogueScript[currentScript].myChoices != null) && choicesToggled ==false){
             
             choiceFunction.leftText = dialogueScript[currentScript].myChoices.leftChoice;
             choiceFunction.rightText = dialogueScript[currentScript].myChoices.rightChoice;
