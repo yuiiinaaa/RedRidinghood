@@ -41,6 +41,10 @@ public class GameManager : MonoBehaviour
         //beenTriggered[0] = true;
         UpdateGameState(GameState.StartScreen);
         instantiatedCanvas = null;
+
+        /** Delete ???? */
+        inv.resetInv();
+        /****************/
         
     }
 

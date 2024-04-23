@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - GlowFlower
+  - Lavender
+  - Tulip
+  - Lily
   layers:
   - Default
   - TransparentFX
