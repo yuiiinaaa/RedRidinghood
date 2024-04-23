@@ -17,21 +17,37 @@ public class HidingE : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor){
         // Play sound effect if assigned
-        if (hideAudio != null){
-            AudioSource.PlayClipAtPoint(hideAudio, transform.position);
-        }
 
-        if (playerToggle == true)
-        {
-            player.SetActive(false);
-            playerToggle = false;
-        } else
-        {
-            player.SetActive(true);
-        }
+        StartCoroutine(Hide());
+        //if (hideAudio != null){
+        //    AudioSource.PlayClipAtPoint(hideAudio, transform.position);
+        //}
+
+        //if (playerToggle == true)
+        //{
+        //    player.SetActive(false);
+        //    playerToggle = false;
+        //} else
+        //{
+        //    player.SetActive(true);
+        //}
 
         return true;
     }
+
+    IEnumerator Hide()
+    {
+        AudioSource.PlayClipAtPoint(hideAudio, transform.position);
+        player.SetActive(false);
+        yield return new WaitForSeconds(3);
+
+        AudioSource.PlayClipAtPoint(hideAudio, transform.position);
+        player.SetActive(true);
+
+
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
