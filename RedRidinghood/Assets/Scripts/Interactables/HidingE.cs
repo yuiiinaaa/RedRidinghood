@@ -9,6 +9,8 @@ public class HidingE : MonoBehaviour, IInteractable
     public string InteractionPrompt => _prompt;
 
     public AudioClip hideAudio;
+    //Rigidbody2D rb;
+
 
     public bool Interact(Interactor interactor){
         // Play sound effect if assigned
@@ -19,9 +21,9 @@ public class HidingE : MonoBehaviour, IInteractable
         
 
         //if e is pressed +  not hiding
-            //delete player
+        //delete player
         // else (already hiding)
-            //respawn in past position
+        //respawn in past position
 
         return true;
     }
@@ -29,6 +31,9 @@ public class HidingE : MonoBehaviour, IInteractable
     void Start()
     {
         
+
+        //Player dummy = GetComponent<Player>();
+
     }
 
     // Update is called once per frame
