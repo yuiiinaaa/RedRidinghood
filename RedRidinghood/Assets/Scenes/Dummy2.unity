@@ -703,7 +703,7 @@ Terrain:
   m_GameObject: {fileID: 495023226}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: ac332cb01c059514ca7566f4df0bc69a, type: 2}
+  m_TerrainData: {fileID: 0}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -1329,6 +1329,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871818632}
   m_CullTransparentMesh: 1
+--- !u!4 &886803290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1045332255444908382, guid: 3fe020b645f4eb54193ed94c237650e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1473407055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &887165764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,7 +1863,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dd86be53c28604331a96c63870c7eaa3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.508
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1949,20 +1955,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 20180129986508744, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6f06400a1a4544f48968e245adfa14ba, type: 2}
     - target: {fileID: 62860823420055921, guid: 3fe020b645f4eb54193ed94c237650e4,
         type: 3}
       propertyPath: m_Name
       value: Dummy
-      objectReference: {fileID: 0}
-    - target: {fileID: 214403590607728517, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.769
       objectReference: {fileID: 0}
     - target: {fileID: 1045332255444908382, guid: 3fe020b645f4eb54193ed94c237650e4,
         type: 3}
@@ -2014,66 +2010,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1848167770276806020, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: left
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848167770276806020, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848167770276806020, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: walkSound
-      value: 
-      objectReference: {fileID: 8300000, guid: f2e66af4de8f54d9d8c26fd801e25ee6, type: 3}
-    - target: {fileID: 2226472577836334513, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.343
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226472577836334513, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3725984891440288613, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3945196111500489695, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6f06400a1a4544f48968e245adfa14ba, type: 2}
-    - target: {fileID: 4113900256479081578, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113900256479081578, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f2e66af4de8f54d9d8c26fd801e25ee6, type: 3}
-    - target: {fileID: 7735065869843463832, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088319276499786030, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088319276499786030, guid: 3fe020b645f4eb54193ed94c237650e4,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2105,17 +2041,17 @@ PrefabInstance:
     - target: {fileID: 585869622656740384, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0000016987324
       objectReference: {fileID: 0}
     - target: {fileID: 585869622656740384, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.48471642
+      value: -0.64471626
       objectReference: {fileID: 0}
     - target: {fileID: 585869622656740384, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.425219
+      value: -9.94522
       objectReference: {fileID: 0}
     - target: {fileID: 585869622656740384, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
@@ -2182,20 +2118,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5161317929272447691, guid: 863f9e788326446dcadee848d75f6529,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 886803290}
     - target: {fileID: 6878498660664358328, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0000016987324
       objectReference: {fileID: 0}
     - target: {fileID: 6878498660664358328, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.48471642
+      value: -0.64471626
       objectReference: {fileID: 0}
     - target: {fileID: 6878498660664358328, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.425219
+      value: -9.94522
       objectReference: {fileID: 0}
     - target: {fileID: 6878498660664358328, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
@@ -2226,7 +2167,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886803290}
     - target: {fileID: 6898330255147175353, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_Priority
@@ -2240,7 +2181,7 @@ PrefabInstance:
     - target: {fileID: 7627566118664139282, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9161030976724335486, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
