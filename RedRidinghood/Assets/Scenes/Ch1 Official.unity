@@ -6223,12 +6223,12 @@ PrefabInstance:
     - target: {fileID: 585869622656740384, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.48471642
+      value: -0.0847168
       objectReference: {fileID: 0}
     - target: {fileID: 585869622656740384, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.214781
+      value: 4.2147803
       objectReference: {fileID: 0}
     - target: {fileID: 585869622656740384, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
@@ -6285,6 +6285,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -135
       objectReference: {fileID: 0}
+    - target: {fileID: 4323123807359251685, guid: 863f9e788326446dcadee848d75f6529,
+        type: 3}
+      propertyPath: m_TrackedObjectOffset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5019496277338311611, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_Name
@@ -6300,11 +6305,6 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 152833154}
-    - target: {fileID: 5161317929272447691, guid: 863f9e788326446dcadee848d75f6529,
-        type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 6878498660664358328, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6313,12 +6313,12 @@ PrefabInstance:
     - target: {fileID: 6878498660664358328, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.48471642
+      value: -0.0847168
       objectReference: {fileID: 0}
     - target: {fileID: 6878498660664358328, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.214781
+      value: 4.2147803
       objectReference: {fileID: 0}
     - target: {fileID: 6878498660664358328, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
@@ -6350,21 +6350,6 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 152833154}
-    - target: {fileID: 6898330255147175353, guid: 863f9e788326446dcadee848d75f6529,
-        type: 3}
-      propertyPath: m_Priority
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6898330255147175353, guid: 863f9e788326446dcadee848d75f6529,
-        type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6898330255147175353, guid: 863f9e788326446dcadee848d75f6529,
-        type: 3}
-      propertyPath: m_Lens.FarClipPlane
-      value: 20.66
-      objectReference: {fileID: 0}
     - target: {fileID: 7627566118664139282, guid: 863f9e788326446dcadee848d75f6529,
         type: 3}
       propertyPath: m_IsActive
