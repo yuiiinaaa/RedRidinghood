@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1b31b2b21c7495388a3ae53d6338e6, type: 3}
+  m_Name: Chapter1.2
+  m_EditorClassIdentifier: 
+  name: 
+  isTriggered: 0
+  Lines:
+  - "You have just collected your first glow flower. Collecting glow flowers will
+    fill up your glow meter, which you can see at the top left. \n\n\n\n"
+  - "Since it is easy to get lost out here, you can replant flowers by pressing \u201CP\u201D.
+    Then, you can always find your way back! Go ahead and try replanting a glow flower. "

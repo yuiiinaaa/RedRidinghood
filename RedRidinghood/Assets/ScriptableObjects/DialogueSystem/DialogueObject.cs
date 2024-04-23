@@ -9,6 +9,8 @@ using System.Runtime.Serialization;
 [CreateAssetMenu(fileName = "New Dialogue", menuName = "DialogueSystem/Dialogue")]
 public class DialogueObject : ScriptableObject
 {
+    public bool hasChoice;
+    public ChoiceDialogueObj myChoices;
     public string name;
     public bool isTriggered;
     [TextArea(15,10)]

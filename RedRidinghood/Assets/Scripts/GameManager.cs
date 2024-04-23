@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -15,15 +18,37 @@ public class GameManager : MonoBehaviour
 
     public static List<bool>gatesUnlocked = new List<bool>();
 
+    public static Dictionary<int, bool> choicesSelected = new Dictionary<int, bool>();
+
     private static bool insideCutscene;
     //public static event Action<GameState> OnGameStateChanged;
     private GameObject instantiatedCanvas;
+     static List<bool> levelUnlock = new List<bool>();
 
     
 
     void Awake(){
         Instance = this;
+
+         for (int i = 0; i<5; i++){
+            levelUnlock.Add(false);
+        }
+        levelUnlock[0] = true;
+
+
+        //create the key values
+        for (int key = 200; key <= 208; key++){
+            // Assuming your dictionary is named choicesSelected
+            if (!choicesSelected.ContainsKey(key)){
+                choicesSelected.Add(key, false);
+            }
+        }
+
+
     }
+
+
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -32,11 +57,21 @@ public class GameManager : MonoBehaviour
         for(int i =0; i< 10; i++){
             ch1Trigger.Add(false);
         }
+        ch1Trigger[0] = true;
+
+        for(int i =0; i< 10; i++){
+            ch2Trigger.Add(false);
+        }
+        ch2Trigger[0] = true;
+
+        //THIS IS JUST FOR DEBUGGING FOR CH2, DELETE LATER PLS
+        ch2Trigger[1] = true;
+
 
         for(int i =0; i< 10; i++){
             gatesUnlocked.Add(false);
         }
-        ch1Trigger[0] = true;
+        
 
         //beenTriggered[0] = true;
         UpdateGameState(GameState.StartScreen);
@@ -89,7 +124,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-
     public void SetTrigger(int num, int indx, bool b){
         if(num == 1){
             ch1Trigger[indx] = b;
@@ -132,8 +166,48 @@ public class GameManager : MonoBehaviour
         return togInteractor;
     }
 
-    public void OnApplicationQuit()
-    {
+     public void OpenScene(string levelName){
+        //previousScene = SceneManager.GetActiveScene ().name;
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void OpenLevel(int i){
+        if(levelUnlock[i-1] == true){
+            //previousScene = SceneManager.GetActiveScene ().name;
+            SceneManager.LoadScene("Chapter" + i);
+        }  
+    }
+
+    public string getSceneName(){
+        return SceneManager.GetActiveScene ().name;
+    }
+
+    public void UnlockScene(){
+        if(SceneManager.GetActiveScene ().name == "Chapter1"){
+            levelUnlock[1] = true;
+        } else if(SceneManager.GetActiveScene ().name == "Chapter2"){
+            levelUnlock[2] = true;
+        }else if(SceneManager.GetActiveScene ().name == "Chapter3"){
+            levelUnlock[3] = true;
+        }else if(SceneManager.GetActiveScene ().name == "Chapter4"){
+            levelUnlock[4] = true;
+        }else if(SceneManager.GetActiveScene ().name == "Chapter5"){
+            levelUnlock[5] = true;
+        }
+    }
+
+    public void SetChoiceValue(int key, bool b){
+        if(!choicesSelected.ContainsKey(key)){
+                choicesSelected.Add(key, b);
+        }else{
+            choicesSelected[key] = b;
+        }
+
+    }
+    public bool GetChoiceValue(int key){
+        return choicesSelected[key];
+    }
+    public void OnApplicationQuit(){
         // Reset all bools in the lists when the application quits
         for(int i = 0; i < ch1Trigger.Count; i++)
         {
@@ -146,9 +220,12 @@ public class GameManager : MonoBehaviour
         }
 
         inv.resetInv();
-    }
 
-    
+        //reset choices
+        foreach (var key in choicesSelected.Keys.ToList()){
+            choicesSelected[key] = false;
+        }
+    }   
 }
 
 public enum GameState{
