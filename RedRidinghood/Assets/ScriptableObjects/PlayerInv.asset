@@ -18,5 +18,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f2c62dae2b55a4138a264ee2d2d390fa, type: 2}
   - {fileID: 11400000, guid: b440a8f1dfe5c426eb2111f8a5f92dc3, type: 2}
   - {fileID: 11400000, guid: 03e1c918b64c74822bea03492ba3cb75, type: 2}
+  - {fileID: 11400000, guid: 511deeaef54114a459e4ea81a9777396, type: 2}
+  - {fileID: 11400000, guid: 03e1c918b64c74822bea03492ba3cb75, type: 2}
+  - {fileID: 11400000, guid: 03e1c918b64c74822bea03492ba3cb75, type: 2}
+  - {fileID: 11400000, guid: 03e1c918b64c74822bea03492ba3cb75, type: 2}
+  - {fileID: 11400000, guid: 03e1c918b64c74822bea03492ba3cb75, type: 2}
+  - {fileID: 11400000, guid: 03e1c918b64c74822bea03492ba3cb75, type: 2}
   flowerAmount: 1
   maxGlow: 10
