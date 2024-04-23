@@ -16,6 +16,8 @@ public class HidingE : MonoBehaviour, IInteractable
             AudioSource.PlayClipAtPoint(hideAudio, transform.position);
         }
 
+        
+
         //if e is pressed +  not hiding
             //delete player
         // else (already hiding)
@@ -35,11 +37,5 @@ public class HidingE : MonoBehaviour, IInteractable
         
     }
 
-
-    //    inv.AddFlowerAmount(1);
-    //    Debug.Log("Flower Amount" + inv.flowerAmount);
-
-    //    // Destroy the GameObject
-    //    Destroy(gameObject);
 
 }
