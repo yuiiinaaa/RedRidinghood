@@ -17,7 +17,7 @@ public class Interactor : MonoBehaviour
             var interactable = _colliders[0].GetComponent<IInteractable>();
             //Debug.Log("Interactable:" + interactable);
             GameManager.Instance.ToggleInteractor(true);
-            if(interactable!= null && Input.GetKeyDown(KeyCode.E)){
+            if(interactable!= null && Input.GetKeyDown(KeyCode.E) && !GameManager.Instance.GetCutsceneTrigger()){
                 Debug.Log("Interact");
                 interactable.Interact(this);
 
