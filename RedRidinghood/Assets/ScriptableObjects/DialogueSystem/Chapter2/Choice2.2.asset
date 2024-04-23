@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9ca2d682f204aa293a8ed94347c6c8, type: 3}
+  m_Name: Choice2.2
+  m_EditorClassIdentifier: 
+  isTriggered: 0
+  leftID: 202
+  rightID: 203
+  leftChoice: '"How did you know?"'
+  rightChoice: '"Please leave me alone."'
+  LinesL:
+  - While you can see nothing, I can see everything.
+  LinesR:
+  - "Don\u2019t be like that, we are one in the same.\n"
