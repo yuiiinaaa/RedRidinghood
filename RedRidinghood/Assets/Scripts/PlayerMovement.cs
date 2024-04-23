@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Vector3 m_Movement;
-    Animator m_Animator;
-    Quaternion m_Rotation = Quaternion.identity;  // for storing rotation of player: default set as no rotation 
-    Rigidbody m_Rigidbody;
+    private Vector3 m_Movement;
+    private Animator m_Animator;
+    private Quaternion m_Rotation = Quaternion.identity;  // for storing rotation of player: default set as no rotation 
+    private Rigidbody rb;
 
     //movement speed in units per second
-    private float movementSpeed = 5f;
+    public float movementSpeed = 5f;
 
-    public float turnSpeed = 20f;
+    // public float turnSpeed = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
         m_Animator = GetComponent<Animator>();
-        m_Rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // FixedUpdate is called before physics system solves any collisions/interactions
@@ -26,9 +26,24 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         if(!GameManager.Instance.GetCutsceneTrigger()){
-            UpdateMovement();
+            UpdateMovementPatrick();
         }
     }
+
+    void UpdateMovementPatrick()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        Vector3 movementDirection = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed;
+        Vector3 appliedGravityToMovement = movementDirection + new Vector3(0f, rb.velocity.y, 0f);
+
+        rb.velocity = appliedGravityToMovement;
+    }
+
+
+
+
 
     void UpdateMovement(){
         // getting input from keyboard
@@ -68,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
         //Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         //m_Rotation = Quaternion.LookRotation(desiredForward);
 
+
         transform.position = transform.position + new Vector3(horizontal * movementSpeed * Time.deltaTime, 0f, vertical * movementSpeed * Time.deltaTime); ;
     }
 
@@ -75,9 +91,9 @@ public class PlayerMovement : MonoBehaviour
     void OnAnimatorMove()
     {
         // set position to: current position + movement vector * magnitude of animator's delta position (change in position due to root motion)
-        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+        rb.MovePosition(rb.position + m_Movement * m_Animator.deltaPosition.magnitude);
 
         // apply rotation: directly setting new rotation
-        m_Rigidbody.MoveRotation(m_Rotation);
+        rb.MoveRotation(m_Rotation);
     }
 }
