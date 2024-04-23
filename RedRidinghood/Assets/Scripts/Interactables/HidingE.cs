@@ -9,6 +9,9 @@ public class HidingE : MonoBehaviour, IInteractable
     public string InteractionPrompt => _prompt;
 
     public AudioClip hideAudio;
+    //public GameObject playerActive;
+    public GameObject player;
+    public bool playerToggle;
     //Rigidbody2D rb;
 
 
@@ -18,21 +21,23 @@ public class HidingE : MonoBehaviour, IInteractable
             AudioSource.PlayClipAtPoint(hideAudio, transform.position);
         }
 
-        
-
-        //if e is pressed +  not hiding
-        //delete player
-        // else (already hiding)
-        //respawn in past position
+        if (playerToggle == true)
+        {
+            player.SetActive(false);
+            playerToggle = false;
+        } else
+        {
+            player.SetActive(true);
+        }
 
         return true;
     }
     // Start is called before the first frame update
     void Start()
     {
-        
-
-        //Player dummy = GetComponent<Player>();
+        playerToggle = true;
+        PlayerMovement player = GetComponent<PlayerMovement>();
+     
 
     }
 
