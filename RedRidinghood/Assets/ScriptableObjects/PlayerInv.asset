@@ -24,5 +24,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 01103a75bea9c0649b70377c623c6867, type: 2}
   - {fileID: 11400000, guid: 5518ec470af86e244a4c4e44a19c6d8b, type: 2}
   - {fileID: 11400000, guid: 2c3dfc6c024ec974187cbfda66cf661c, type: 2}
+  - {fileID: 11400000, guid: 26ea2e8a7d63d194c9981bdecea05992, type: 2}
   flowerAmount: 1
   maxGlow: 10
