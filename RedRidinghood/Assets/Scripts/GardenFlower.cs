@@ -44,6 +44,30 @@ public class GardenFlower : MonoBehaviour, IInteractable
 
         }
 
+        else if (gameObject.CompareTag("Lov"))
+        {
+            Debug.Log("Lov found");
+            inv.AddLovAmount(1);
+            Debug.Log("Lov Amount" + inv.lovAmount);
+
+        }
+
+        else if (gameObject.CompareTag("Sunflower"))
+        {
+            Debug.Log("Sunflower found");
+            inv.AddSunflowerAmount(1);
+            Debug.Log("Sunflower Amount" + inv.sunflowerAmount);
+
+        }
+
+        else if (gameObject.CompareTag("Blackrose"))
+        {
+            Debug.Log("Blackrose found");
+            inv.AddBlackroseAmount(1);
+            Debug.Log("Blackrose Amount" + inv.blackroseAmount);
+
+        }
+
 
         // Destroy the GameObject
         Destroy(gameObject);

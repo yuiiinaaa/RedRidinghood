@@ -89,6 +89,45 @@ public class PlayerInventory : ScriptableObject
         }
     }
 
+    public void AddLovAmount(int value)
+    {
+        lovAmount += value;
+    }
+
+    public void RemoveLovAmount(int value)
+    {
+        if (lovAmount > 0)
+        {
+            lovAmount -= value;
+        }
+    }
+    public void AddSunflowerAmount(int value)
+    {
+        sunflowerAmount += value;
+    }
+
+    public void RemoveSunflowerAmount(int value)
+    {
+        if (sunflowerAmount > 0)
+        {
+            sunflowerAmount -= value;
+        }
+    }
+
+    public void AddBlackroseAmount(int value)
+    {
+        blackroseAmount += value;
+    }
+
+    public void RemoveBlackroseAmount(int value)
+    {
+        if (blackroseAmount > 0)
+        {
+            blackroseAmount -= value;
+        }
+    }
+
+
 }
 
 
