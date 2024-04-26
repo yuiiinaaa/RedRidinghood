@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasChoice: 0
   myChoices: {fileID: 0}
-  name: Flowers
+  name: 
   isTriggered: 0
   Lines:
   - 'Some dialogue that goes like ...
