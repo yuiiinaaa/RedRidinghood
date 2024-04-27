@@ -44,13 +44,26 @@ public class Dialogue : MonoBehaviour
 
         choicesToggled = false;
         
-        StartDialogue();
+        if(dialogueScript.Count > 0){
+            StartDialogue();
+        }else{
+            isToggled = false;
+            ToggleChildren(false);
+            GameManager.Instance.SetCutsceneTrigger(false);
+        }
+        GameManager.Instance.SetCutsceneTrigger(false);
+        Debug.Log(GameManager.Instance.GetCutsceneTrigger());
+
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(dialogueScript.Count > 0){
+            
+        
         //display choices if dialogue reaches the last box
         //...
         
@@ -89,6 +102,7 @@ public class Dialogue : MonoBehaviour
         }else if(currentChapter == "2"){
             chapter2Triggers();
         }
+        }
        
 
         // //this is for testing purposes
@@ -104,6 +118,7 @@ public class Dialogue : MonoBehaviour
 
     void StartDialogue(){
         index = 0;
+        GameManager.Instance.SetCutsceneTrigger(true);
         StartCoroutine(TypeLine());
     }
 
