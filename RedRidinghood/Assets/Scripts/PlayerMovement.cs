@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     // setting movement vector and rotation, runs in time with physics loop (?)
     void FixedUpdate()
     {
+        //Debug.Log(GameManager.Instance.GetCutsceneTrigger());
         if(!GameManager.Instance.GetCutsceneTrigger()){
             UpdateMovement();
         }
