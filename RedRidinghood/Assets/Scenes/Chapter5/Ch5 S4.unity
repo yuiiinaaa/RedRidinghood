@@ -3309,6 +3309,79 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1733515137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 436.85052
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 160.76111
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.647217
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213362920408916582, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6498336310016665318, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: m_Name
+      value: Jumpscare
+      objectReference: {fileID: 0}
+    - target: {fileID: 8356541947198118383, guid: d8786dabe305d4c2eaabc5aed36bee80,
+        type: 3}
+      propertyPath: sceneName
+      value: Ch5 S4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8786dabe305d4c2eaabc5aed36bee80, type: 3}
 --- !u!1001 &1891228942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3601,3 +3674,4 @@ SceneRoots:
   - {fileID: 1691538899}
   - {fileID: 1037564535}
   - {fileID: 121960012}
+  - {fileID: 1733515137}
