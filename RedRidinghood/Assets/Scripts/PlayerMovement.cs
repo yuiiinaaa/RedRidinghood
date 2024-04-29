@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized;
-        m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed;
+        m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed + new Vector3(0f, m_Rigidbody.velocity.y, 0f);
     }
 
     // allows applying root motion

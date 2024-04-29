@@ -19,7 +19,20 @@ public class SimpleStateMachine : MonoBehaviour
     public float visionDistanceRange = 100f;
     public float visionAngleRange = 45f;
 
-    public bool testSeesPlayer = false;
+    // Enemy abilities
+    public float patrolSpeed = 7f;
+    public float attackSpeed = 10f;
+    public float searchSpeed = 5f;
+
+    public float patrolAngularSpeed = 240f;
+    public float attackAngularSpeed = 200f;
+    public float searchAngularSpeed = 240f;
+
+    public float patrolAcceleration = 12f;
+    public float attackAcceleration = 8f;
+    public float searchAcceleration = 16f;
+
+    public float stopDistance = 0.5f;
 
     private void Start()
     {
@@ -81,10 +94,11 @@ public class SimpleStateMachine : MonoBehaviour
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             agent.destination = patrolPoints[Random.Range(0, patrolPoints.Length)].position;
 
-        //If find player, go to attack
+        // Attack State
         if (SeesPlayer())
         {
             SetAgentMovement(10f, 200f, 8f, 0.5f);
+            visionAngleRange = 180f;
             GoToState(State.Attack);
         }
     }
@@ -94,9 +108,10 @@ public class SimpleStateMachine : MonoBehaviour
 
         agent.destination = target.position;
 
-        if (!SeesPlayer()) // Go to Search State
+        if (!SeesPlayer()) // Search State
         {
             SetAgentMovement(5f, 240f, 16f, 0.5f);
+            visionAngleRange = 45f;
             clockTime = Time.time;
             GoToState(State.Search);
         }
@@ -119,12 +134,14 @@ public class SimpleStateMachine : MonoBehaviour
         if (SeesPlayer()) // Attack State
         {
             SetAgentMovement(10f, 200f, 8f, 0.5f);
+            visionAngleRange = 180f;
             GoToState(State.Attack);
         }
 
         if (clockTime + searchingDelay < Time.time) // Patrol State
         {
             SetAgentMovement(7f, 240f, 12f, 0.5f);
+            visionAngleRange = 45f;
             GoToState(State.Patrol);
         }
 

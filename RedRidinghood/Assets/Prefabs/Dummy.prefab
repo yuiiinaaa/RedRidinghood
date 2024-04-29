@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 1045332255444908382}
   - component: {fileID: 2608880447045042495}
   - component: {fileID: 455363117134766979}
-  - component: {fileID: 1848167770276806020}
-  - component: {fileID: 20180129986508744}
-  - component: {fileID: 4538609235166612624}
-  - component: {fileID: 4933335366167103600}
   - component: {fileID: 4113900256479081578}
   - component: {fileID: 7690716975312724290}
-  - component: {fileID: 4883282623446604756}
+  - component: {fileID: 20180129986508744}
+  - component: {fileID: 3740636819729403681}
+  - component: {fileID: 1848167770276806020}
+  - component: {fileID: 4538609235166612624}
+  - component: {fileID: 4933335366167103600}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Player
@@ -77,76 +77,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &1848167770276806020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62860823420055921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bba2109fd058e94d94309bf21408c92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 20
-  turnSpeed: 20
-  walkToggle: 0
---- !u!95 &20180129986508744
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62860823420055921}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6f06400a1a4544f48968e245adfa14ba, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4538609235166612624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62860823420055921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ee5309ea3dc491cb825d963a2d2068, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inv: {fileID: 11400000, guid: 4499db52ece81445ca6e33909f8f07b6, type: 2}
-  prefabFlower: {fileID: 1809037554609748060, guid: 7d7d09999ca9f4ccda2f08f87354c739,
-    type: 3}
-  interactSoundP: {fileID: 8300000, guid: bdb426dcf8f11428f8fac3f0f3dea600, type: 3}
---- !u!114 &4933335366167103600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62860823420055921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da3d10741f0c4649b168710abe946b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactionPoint: {fileID: 7076570751003250194}
-  _interactionPointRadius: 1.5
-  _interactableMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _numFound: 0
 --- !u!82 &4113900256479081578
 AudioSource:
   m_ObjectHideFlags: 0
@@ -295,7 +225,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &4883282623446604756
+--- !u!95 &20180129986508744
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62860823420055921}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f06400a1a4544f48968e245adfa14ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &3740636819729403681
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,10 +265,59 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.44199848
-  m_Height: 1.3030233
+  m_Radius: 0.23
+  m_Height: 1.28
   m_Direction: 1
-  m_Center: {x: 0, y: 0.15151167, z: 0.05800152}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1848167770276806020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62860823420055921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bba2109fd058e94d94309bf21408c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 20
+  movementSpeed: 5
+  walkToggle: 0
+--- !u!114 &4538609235166612624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62860823420055921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ee5309ea3dc491cb825d963a2d2068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inv: {fileID: 11400000, guid: 4499db52ece81445ca6e33909f8f07b6, type: 2}
+  prefabFlower: {fileID: 1809037554609748060, guid: 7d7d09999ca9f4ccda2f08f87354c739,
+    type: 3}
+  interactSoundP: {fileID: 8300000, guid: bdb426dcf8f11428f8fac3f0f3dea600, type: 3}
+--- !u!114 &4933335366167103600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62860823420055921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da3d10741f0c4649b168710abe946b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionPoint: {fileID: 7076570751003250194}
+  _interactionPointRadius: 1.5
+  _interactableMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _numFound: 0
 --- !u!1 &339797378424026606
 GameObject:
   m_ObjectHideFlags: 0
