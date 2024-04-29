@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
             GameManager.Instance.SetCutsceneTrigger(false);
         }
         GameManager.Instance.SetCutsceneTrigger(false);
-        Debug.Log(GameManager.Instance.GetCutsceneTrigger());
+        //Debug.Log(GameManager.Instance.GetCutsceneTrigger());
 
         
         

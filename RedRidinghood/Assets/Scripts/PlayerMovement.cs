@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             walkSound.Play();
             walkToggle = true;
             //AudioSource.PlayClipAtPoint(walkSound, transform.position);
-            Debug.Log("iswalking");
+            //Debug.Log("iswalking");
         }
         if (!isWalking)
         {
