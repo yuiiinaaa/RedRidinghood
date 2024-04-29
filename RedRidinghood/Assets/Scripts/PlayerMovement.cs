@@ -10,13 +10,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody m_Rigidbody;
     //AudioSource audioData;
     AudioSource walkSound;
-    public float velocity = 20f;
+    public float velocity = 15f;
 
 
     //movement speed in units per second
-    private float movementSpeed = 5f;
+    public float movementSpeed = 5f;
 
-    public float turnSpeed = 20f;
     public bool walkToggle;
     SpriteRenderer sr;
 
@@ -37,9 +36,10 @@ public class PlayerMovement : MonoBehaviour
     // setting movement vector and rotation, runs in time with physics loop (?)
     void FixedUpdate()
     {
-        //if(!GameManager.Instance.GetCutsceneTrigger()){
+        //Debug.Log(GameManager.Instance.GetCutsceneTrigger());
+        if(!GameManager.Instance.GetCutsceneTrigger()){
             UpdateMovement();
-        //}
+        }
     }
 
     void UpdateMovement(){
@@ -47,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        m_Movement.Set(horizontal, 0f, vertical);
-        m_Movement.Normalize();
+        //m_Movement.Set(horizontal, 0f, vertical);
+        //m_Movement.Normalize();
 
         // setting animator bool for animation transitions
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
@@ -77,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
         if(vertical > 0)
         {
             m_Animator.SetBool("Forward", true);
+            //Debug.Log(m_Rigidbody.velocity.x);
+            //Debug.Log(m_Rigidbody.velocity.z);
         } else
         {
             m_Animator.SetBool("Forward", false);
@@ -94,7 +96,9 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal > 0)
         {
             m_Animator.SetBool("Right", true);
- 
+            //Debug.Log(m_Rigidbody.velocity.x);
+            //Debug.Log(m_Rigidbody.velocity.z);
+
         } else
         {
             m_Animator.SetBool("Right", false);
@@ -112,18 +116,19 @@ public class PlayerMovement : MonoBehaviour
   
         }
 
-        m_Rigidbody.velocity = new Vector3(horizontal, 0, vertical);
+        //m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized;
+        m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed;
     }
 
     // allows applying root motion
-    void OnAnimatorMove()
-    {
-        // set position to: current position + movement vector * magnitude of animator's delta position (change in position due to root motion)
-        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+    //void OnAnimatorMove()
+    //{
+    //    // set position to: current position + movement vector * magnitude of animator's delta position (change in position due to root motion)
+    //    //m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
 
-        // apply rotation: directly setting new rotation
-        m_Rigidbody.MoveRotation(m_Rotation);
-    }
+    //    // apply rotation: directly setting new rotation
+    //    //m_Rigidbody.MoveRotation(m_Rotation);
+    //}
 
     
 }

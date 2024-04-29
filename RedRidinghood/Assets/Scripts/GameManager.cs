@@ -23,7 +23,9 @@ public class GameManager : MonoBehaviour
     private static bool insideCutscene;
     //public static event Action<GameState> OnGameStateChanged;
     private GameObject instantiatedCanvas;
-     static List<bool> levelUnlock = new List<bool>();
+    static List<bool> levelUnlock = new List<bool>();
+
+    public static int chap5ScenesAmount;
 
     
 
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        insideCutscene = true; 
+        insideCutscene = false; 
         //may need to move to on awake
         for(int i =0; i< 10; i++){
             ch1Trigger.Add(false);
@@ -166,7 +168,7 @@ public class GameManager : MonoBehaviour
         return togInteractor;
     }
 
-     public void OpenScene(string levelName){
+    public void OpenScene(string levelName){
         //previousScene = SceneManager.GetActiveScene ().name;
         SceneManager.LoadScene(levelName);
     }
