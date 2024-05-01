@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
             m_Animator.SetBool("Right", false);
             m_Animator.SetBool("Left", false);
             m_Animator.SetBool("Torwards", false);
+            walkToggle = false;
         }
     }
 
