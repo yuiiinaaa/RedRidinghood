@@ -1,24 +1,25 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class DisableUIImage : MonoBehaviour
+public class EnableDisableSpriteRenderer : MonoBehaviour
 {
-    public bool disableImage = false;
-    private Image imageComponent;
+    public bool enableSpriteRenderer = false;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
-        imageComponent = GetComponent<Image>(); // Get the Image component attached to this GameObject
-        imageComponent.enabled = false;
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Get the SpriteRenderer component attached to this GameObject
+        spriteRenderer.enabled = false;
     }
 
     private void Update()
     {
-        if(GameManager.Instance.GetToggleInteractor() == true && !GameManager.Instance.GetCutsceneTrigger()){
-            imageComponent.enabled = true;
-
-        }else{
-            imageComponent.enabled = false;
-        } 
+        if (GameManager.Instance.GetToggleInteractor() == true && !GameManager.Instance.GetCutsceneTrigger())
+        {
+            spriteRenderer.enabled = true;
+        }
+        else
+        {
+            spriteRenderer.enabled = false;
+        }
     }
 }

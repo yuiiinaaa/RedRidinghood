@@ -30,14 +30,14 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ChangeCameraMode(CameraMode.ThirdPerson);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeCameraMode(CameraMode.FirstPerson);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    ChangeCameraMode(CameraMode.ThirdPerson);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    ChangeCameraMode(CameraMode.FirstPerson);
+        //}
         
     }
 
