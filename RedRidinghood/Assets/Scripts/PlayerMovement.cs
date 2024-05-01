@@ -39,6 +39,12 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(GameManager.Instance.GetCutsceneTrigger());
         if(!GameManager.Instance.GetCutsceneTrigger()){
             UpdateMovement();
+        } else
+        {
+            m_Animator.SetBool("Forward", false);
+            m_Animator.SetBool("Right", false);
+            m_Animator.SetBool("Left", false);
+            m_Animator.SetBool("Torwards", false);
         }
     }
 
