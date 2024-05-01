@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     //movement speed in units per second
-    public float movementSpeed = 5f;
+    public float movementSpeed = 2f;
 
     public bool walkToggle;
     SpriteRenderer sr;
@@ -72,11 +72,13 @@ public class PlayerMovement : MonoBehaviour
             walkToggle = false;
         }
 
+        m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed + new Vector3(0f, m_Rigidbody.velocity.y, 0f);
 
         //Dasol trying things to get it to move
-        if(vertical > 0)
+        if (vertical > 0)
         {
             m_Animator.SetBool("Forward", true);
+            m_Rigidbody.velocity = m_Rigidbody.velocity.normalized * 7f;
             //Debug.Log(m_Rigidbody.velocity.x);
             //Debug.Log(m_Rigidbody.velocity.z);
         } else
@@ -86,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         if (vertical < 0)
         {
             m_Animator.SetBool("Towards", true);
+            m_Rigidbody.velocity = m_Rigidbody.velocity.normalized * 7f;
         }
         else
         {
@@ -117,7 +120,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized;
-        m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed + new Vector3(0f, m_Rigidbody.velocity.y, 0f);
+        //m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed + new Vector3(0f, m_Rigidbody.velocity.y, 0f);
+
+        
     }
 
     // allows applying root motion
