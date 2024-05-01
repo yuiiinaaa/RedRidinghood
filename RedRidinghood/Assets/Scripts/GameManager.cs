@@ -13,11 +13,16 @@ public class GameManager : MonoBehaviour
 
     private bool togInteractor = false;
 
+
+    // for triggers other than dialogue
     public static List<bool>ch1Trigger = new List<bool>();
     public static List<bool>ch2Trigger = new List<bool>();
+    public static List<bool>ch3Trigger = new List<bool>();
+
 
     public static List<bool>gatesUnlocked = new List<bool>();
 
+    // for all triggers for choice dialogue
     public static Dictionary<int, bool> choicesSelected = new Dictionary<int, bool>();
 
     private static bool insideCutscene;
@@ -46,6 +51,14 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        for (int key = 300; key <= 301; key++)
+        {
+            if (!choicesSelected.ContainsKey(key))
+            {
+                choicesSelected.Add(key, false);
+            }
+        }
+
 
     }
 
@@ -66,11 +79,18 @@ public class GameManager : MonoBehaviour
         }
         ch2Trigger[0] = true;
 
+        for (int i = 0; i < 10; i++)
+        {
+            ch3Trigger.Add(false);
+        }
+        ch3Trigger[0] = true;
+
         //THIS IS JUST FOR DEBUGGING FOR CH2, DELETE LATER PLS
         ch2Trigger[1] = true;
+        ch3Trigger[1] = true;
 
 
-        for(int i =0; i< 10; i++){
+        for (int i =0; i< 10; i++){
             gatesUnlocked.Add(false);
         }
         
@@ -95,7 +115,7 @@ public class GameManager : MonoBehaviour
         // }
 
         // Check if the player pressed the Escape key
-        if (Input.GetKeyDown(KeyCode.Mouse1) && instantiatedCanvas != null)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && instantiatedCanvas != null)
         {
             // Destroy the instantiated canvas and its children
             Destroy(instantiatedCanvas);
@@ -133,6 +153,10 @@ public class GameManager : MonoBehaviour
         if(num == 2){
             ch2Trigger[indx] = b;
         }
+        if (num == 3)
+        {
+            ch3Trigger[indx] = b;
+        }
     }
 
     public bool GetTrigger(int num, int indx){
@@ -141,6 +165,9 @@ public class GameManager : MonoBehaviour
         }
         if(num == 2){
             return ch2Trigger[indx];
+        }
+        if (num == 3) {
+            return ch3Trigger[indx];
         }
         return false;
     }
@@ -220,6 +247,12 @@ public class GameManager : MonoBehaviour
         {
             ch2Trigger[i] = false;
         }
+
+        for (int i = 0; i < ch3Trigger.Count; i++)
+        {
+            ch3Trigger[i] = false;
+        }
+
 
         inv.resetInv();
 

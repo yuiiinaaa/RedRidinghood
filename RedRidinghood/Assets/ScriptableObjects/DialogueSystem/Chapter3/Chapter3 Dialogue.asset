@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1b31b2b21c7495388a3ae53d6338e6, type: 3}
   m_Name: Chapter3 Dialogue
   m_EditorClassIdentifier: 
-  hasChoice: 0
-  myChoices: {fileID: 0}
+  hasChoice: 1
+  myChoices: {fileID: 11400000, guid: dcae77723774ef147a2a4982cd69ed93, type: 2}
   name: 
   isTriggered: 0
   Lines:
-  - 'Some dialogue that goes like ...
-
-    "go pick some flowers for granny, but
-    don''t pick the wrong ones" :D'
+  - Ah glad to see you still alive. I was getting a little concerned.
+  - hii
