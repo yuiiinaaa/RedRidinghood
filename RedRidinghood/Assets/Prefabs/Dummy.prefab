@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1848167770276806020}
   - component: {fileID: 4538609235166612624}
   - component: {fileID: 4933335366167103600}
+  - component: {fileID: 1289099729440675924}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Player
@@ -88,9 +89,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 609e94ce9dcdc6542a66f6f3e49818b8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d124e346d00e24578a498673ff0f97d7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.18
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -319,6 +320,29 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _numFound: 0
+--- !u!136 &1289099729440675924
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62860823420055921}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.44199848
+  m_Height: 1.3030233
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.15151167, z: 0.05800152}
 --- !u!1 &339797378424026606
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +387,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 0.2
   m_Range: 1.2
   m_SpotAngle: 30
@@ -534,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede1822a50b7f467c8a026e2ca546f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableImage: 0
+  enableSpriteRenderer: 0
 --- !u!1 &6162893699835788642
 GameObject:
   m_ObjectHideFlags: 0
