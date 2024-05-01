@@ -1590,6 +1590,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.366
       objectReference: {fileID: 0}
+    - target: {fileID: 4113900256479081578, guid: 3fe020b645f4eb54193ed94c237650e4,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d124e346d00e24578a498673ff0f97d7, type: 3}
     - target: {fileID: 4538609235166612624, guid: 3fe020b645f4eb54193ed94c237650e4,
         type: 3}
       propertyPath: interactSoundP
