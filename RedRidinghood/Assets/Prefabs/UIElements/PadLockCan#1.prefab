@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click to close...
+  m_text: Press esc to close...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 49cc78425d02e4c0da8a99f45635b198, type: 2}
   m_sharedMaterial: {fileID: -8867994124078828908, guid: 49cc78425d02e4c0da8a99f45635b198,
@@ -242,8 +242,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5407975287936201567}
-  - {fileID: 1608293744178657780}
   - {fileID: 4277382279732438370}
+  - {fileID: 1608293744178657780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
