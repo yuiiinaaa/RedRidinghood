@@ -58,7 +58,7 @@ public class PlayerTrig : MonoBehaviour
         if(GameManager.Instance.GetCutsceneTrigger() == false){
             if (!firstMovementPressed && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))
             {   
-                StartCoroutine(DelayThenReturnTrue(3f, 1, 1));
+                StartCoroutine(DelayThenReturnTrue(2f, 1, 1));
                 firstMovementPressed = true;
             }
 
@@ -84,14 +84,18 @@ public class PlayerTrig : MonoBehaviour
     void Spawn(){
         // Ensure that the prefab to spawn is assigned
         if (prefabFlower != null){
-            // Instantiate the prefab at the current position and rotation of this GameObject
-            Vector3 transPos = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
-            GameObject spawnedObject = Instantiate(prefabFlower, transPos, Quaternion.identity);
+            if(inv.flowerAmount>0){
+                // Instantiate the prefab at the current position and rotation of this GameObject
+                Vector3 transPos = new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z);
+                GameObject spawnedObject = Instantiate(prefabFlower, transPos, Quaternion.identity);
 
-            if (interactSoundP != null)
-            {
-                AudioSource.PlayClipAtPoint(interactSoundP, transform.position);
+                if (interactSoundP != null)
+                {
+                    AudioSource.PlayClipAtPoint(interactSoundP, transform.position);
+                }
+                
             }
+            
         }
         else{
             Debug.LogWarning("Prefab to spawn is not assigned!");
