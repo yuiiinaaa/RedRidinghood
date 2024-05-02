@@ -13,7 +13,7 @@ public class TriggerJumpscare : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start(){
-        maxDoors = 8;
+        maxDoors = 15;
 
     
         
