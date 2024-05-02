@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2243518781647211758}
   - component: {fileID: 5300106696308703261}
   - component: {fileID: 192753547470764115}
-  - component: {fileID: 4788677300019792187}
+  - component: {fileID: 4778723218868486302}
   m_Layer: 5
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4788677300019792187}
+      - m_Target: {fileID: 4778723218868486302}
         m_TargetAssemblyTypeName: ChoiceButtonScript, Assembly-CSharp
         m_MethodName: buttonPressed
         m_Mode: 1
@@ -269,7 +269,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4788677300019792187
+--- !u!114 &4778723218868486302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

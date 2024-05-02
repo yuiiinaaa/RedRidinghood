@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c1b31b2b21c7495388a3ae53d6338e6, type: 3}
-  m_Name: Chapter3 Dialogue
+  m_Name: Ch3.2
   m_EditorClassIdentifier: 
   hasChoice: 1
-  myChoices: {fileID: 11400000, guid: dcae77723774ef147a2a4982cd69ed93, type: 2}
+  myChoices: {fileID: 11400000, guid: 4ca05aca4f27cd64d891dd718e0f6a76, type: 2}
   name: 
   isTriggered: 0
   Lines:
-  - Ah glad to see you still alive. I was getting a little concerned.
-  - hii
+  - This is a beautiful garden, no? You should make a flower bouquet for your granny.
+  - You're almost at granny's house.

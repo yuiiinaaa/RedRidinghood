@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public static List<bool>ch2Trigger = new List<bool>();
     public static List<bool>ch3Trigger = new List<bool>();
 
-
     public static List<bool>gatesUnlocked = new List<bool>();
 
     // for all triggers for choice dialogue
@@ -51,15 +50,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        for (int key = 300; key <= 301; key++)
+        for (int key = 300; key <= 303; key++)
         {
             if (!choicesSelected.ContainsKey(key))
             {
                 choicesSelected.Add(key, false);
             }
         }
-
-
     }
 
 
@@ -68,6 +65,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {   
         insideCutscene = false; 
+
         //may need to move to on awake
         for(int i =0; i< 10; i++){
             ch1Trigger.Add(false);
