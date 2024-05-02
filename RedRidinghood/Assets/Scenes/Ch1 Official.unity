@@ -3602,6 +3602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5006762765337561375, guid: 477454550d9d847b787170ee2c471ac6,
         type: 3}
+      propertyPath: lockID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006762765337561375, guid: 477454550d9d847b787170ee2c471ac6,
+        type: 3}
       propertyPath: prefabL
       value: 
       objectReference: {fileID: 1687200540587565262, guid: 4ef1c1f3335c5423cb081dea082b558a,
