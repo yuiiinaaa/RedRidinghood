@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9ca2d682f204aa293a8ed94347c6c8, type: 3}
+  m_Name: Choice5.5
+  m_EditorClassIdentifier: 
+  isTriggered: 0
+  leftID: 508
+  rightID: 509
+  leftChoice: '"I can''t give up now."'
+  rightChoice: '"Maybe... Maybe you''re right."'
+  LinesL:
+  - 'I have always loved that spirit of perseverance in you. '
+  LinesR:
+  - It is about time you came to your senses. Now close your eyes, and get rid of
+    those silly glow flowers. It is time to awaken your true self.

@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c1b31b2b21c7495388a3ae53d6338e6, type: 3}
-  m_Name: Ch3.4
+  m_Name: Ch5.8.6
   m_EditorClassIdentifier: 
   hasChoice: 1
-  myChoices: {fileID: 11400000, guid: d3f254e49ca07af4a8666676abea91af, type: 2}
+  myChoices: {fileID: 11400000, guid: 3e7d7c652b4804269884a62f1ef42bcd, type: 2}
   name: 
   isTriggered: 0
   Lines:
-  - Are you done collecting flowers?
+  - ' But tell me, Red, do you really believe you can escape what you''ve become?
+    The darkness within you is a part of who you are, and it always will be.'
+  - 

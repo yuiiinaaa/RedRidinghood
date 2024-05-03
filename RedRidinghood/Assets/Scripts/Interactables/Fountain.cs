@@ -37,7 +37,7 @@ public class Fountain : MonoBehaviour, IInteractable
         if (parentTransform != null)
         {
             fountain = parentTransform.GetChild(0).gameObject;
-            Debug.Log("fountain: " + fountain != null);
+            // Debug.Log("fountain: " + fountain != null);
         }
         else
         {

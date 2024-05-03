@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public static List<bool>ch1Trigger = new List<bool>();
     public static List<bool>ch2Trigger = new List<bool>();
     public static List<bool>ch3Trigger = new List<bool>();
+    public static List<bool>ch5Trigger = new List<bool>();
 
     public static List<bool>gatesUnlocked = new List<bool>();
 
@@ -52,7 +53,15 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        for (int key = 300; key <= 303; key++)
+        for (int key = 300; key <= 307; key++)
+        {
+            if (!choicesSelected.ContainsKey(key))
+            {
+                choicesSelected.Add(key, false);
+            }
+        }
+
+        for (int key = 500; key <= 511; key++)
         {
             if (!choicesSelected.ContainsKey(key))
             {
@@ -69,27 +78,24 @@ public class GameManager : MonoBehaviour
     void Start()
     {   
         insideCutscene = false; 
+        UnlockScene();
 
         //may need to move to on awake
         for(int i =0; i< 10; i++){
             ch1Trigger.Add(false);
+            ch2Trigger.Add(false);
+            ch3Trigger.Add(false);
+            ch5Trigger.Add(false);
         }
         ch1Trigger[0] = true;
-
-        for(int i =0; i< 10; i++){
-            ch2Trigger.Add(false);
-        }
         ch2Trigger[0] = true;
-
-        for (int i = 0; i < 10; i++)
-        {
-            ch3Trigger.Add(false);
-        }
         ch3Trigger[0] = true;
+        ch5Trigger[0] = true;
 
         //THIS IS JUST FOR DEBUGGING FOR CH2, DELETE LATER PLS
         ch2Trigger[1] = true;
         ch3Trigger[1] = true;
+        ch5Trigger[1] = true;
 
 
         for (int i =0; i< 10; i++){
@@ -168,6 +174,10 @@ public class GameManager : MonoBehaviour
         {
             ch3Trigger[indx] = b;
         }
+        if (num == 5)
+        {
+            ch5Trigger[indx] = b;
+        }
     }
 
     public bool GetTrigger(int num, int indx){
@@ -179,6 +189,9 @@ public class GameManager : MonoBehaviour
         }
         if (num == 3) {
             return ch3Trigger[indx];
+        }
+        if (num == 5) {
+            return ch5Trigger[indx];
         }
         return false;
     }
@@ -227,16 +240,37 @@ public class GameManager : MonoBehaviour
     }
 
     public void UnlockScene(){
-        if(SceneManager.GetActiveScene ().name == "Chapter1"){
+        if(SceneManager.GetActiveScene ().name == "Ch1 Official"){
+            levelUnlock[0] = true;
+        } else if(SceneManager.GetActiveScene ().name == "Ch2 Official"){
             levelUnlock[1] = true;
-        } else if(SceneManager.GetActiveScene ().name == "Chapter2"){
+        }else if(SceneManager.GetActiveScene ().name == "Ch3 Official"){
             levelUnlock[2] = true;
-        }else if(SceneManager.GetActiveScene ().name == "Chapter3"){
+        }else if(SceneManager.GetActiveScene ().name == "Ch4 Official"){
+            //levelUnlock[3] = true;
+        }else if(SceneManager.GetActiveScene ().name == "Ch5 Official"){
             levelUnlock[3] = true;
-        }else if(SceneManager.GetActiveScene ().name == "Chapter4"){
-            levelUnlock[4] = true;
-        }else if(SceneManager.GetActiveScene ().name == "Chapter5"){
-            levelUnlock[5] = true;
+        }
+    }
+
+    public async void OpenLastPlayedLevel(){
+        int lastLvl = 0;
+
+        for(int i = 0; i<6; i++){
+            if(levelUnlock[i]==true){
+                lastLvl = i;
+            }else{
+                break;
+            }
+        }
+        if(lastLvl == 0){
+            SceneManager.LoadScene("Ch1 Official");
+        }else if(lastLvl == 1){
+            SceneManager.LoadScene("Ch2 Official");
+        }else if(lastLvl == 2){
+            SceneManager.LoadScene("Ch3 Official");
+        }else if(lastLvl == 3){
+            SceneManager.LoadScene("Ch5 Official");
         }
     }
 
@@ -266,6 +300,10 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < ch3Trigger.Count; i++)
         {
             ch3Trigger[i] = false;
+        }
+        for (int i = 0; i < ch5Trigger.Count; i++)
+        {
+            ch5Trigger[i] = false;
         }
 
 
