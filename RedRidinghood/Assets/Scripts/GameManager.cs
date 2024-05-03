@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
-
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    static string previousScene;
     public PlayerInventory inv;
     public GameState State;
+    private new CinemachineVirtualCamera camera;
 
     private bool togInteractor = false;
 
+
+    // for triggers other than dialogue
     public static List<bool>ch1Trigger = new List<bool>();
     public static List<bool>ch2Trigger = new List<bool>();
+    public static List<bool>ch3Trigger = new List<bool>();
 
     public static List<bool>gatesUnlocked = new List<bool>();
 
+    // for all triggers for choice dialogue
     public static Dictionary<int, bool> choicesSelected = new Dictionary<int, bool>();
 
     private static bool insideCutscene;
@@ -46,15 +52,24 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        for (int key = 300; key <= 303; key++)
+        {
+            if (!choicesSelected.ContainsKey(key))
+            {
+                choicesSelected.Add(key, false);
+            }
+        }
 
+        // Setting cinemachine far clip plane
+        camera = GameObject.FindGameObjectWithTag("ThirdPOVCamera").GetComponent<CinemachineVirtualCamera>();
+        camera.m_Lens.FarClipPlane = 20f;
     }
 
 
-
-    // Start is called before the first frame update
     void Start()
     {   
         insideCutscene = false; 
+
         //may need to move to on awake
         for(int i =0; i< 10; i++){
             ch1Trigger.Add(false);
@@ -66,11 +81,18 @@ public class GameManager : MonoBehaviour
         }
         ch2Trigger[0] = true;
 
+        for (int i = 0; i < 10; i++)
+        {
+            ch3Trigger.Add(false);
+        }
+        ch3Trigger[0] = true;
+
         //THIS IS JUST FOR DEBUGGING FOR CH2, DELETE LATER PLS
         ch2Trigger[1] = true;
+        ch3Trigger[1] = true;
 
 
-        for(int i =0; i< 10; i++){
+        for (int i =0; i< 10; i++){
             gatesUnlocked.Add(false);
         }
         
@@ -85,7 +107,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         // if (instantiatedCanvas != null){
@@ -95,14 +116,24 @@ public class GameManager : MonoBehaviour
         // }
 
         // Check if the player pressed the Escape key
-        if (Input.GetKeyDown(KeyCode.Mouse1) && instantiatedCanvas != null)
+        if (Input.GetKeyDown(KeyCode.Escape) && instantiatedCanvas != null)
         {
             // Destroy the instantiated canvas and its children
             Destroy(instantiatedCanvas);
             instantiatedCanvas = null;
             insideCutscene = false;
         }
-        
+
+        UpdateViewRange();
+
+    }
+
+    /*
+     * When you collect a flower or put one flower down, it updates the far clip plane
+     */
+    public void UpdateViewRange()
+    {
+        camera.m_Lens.FarClipPlane = 15f + inv.flowerAmount * 5f;
     }
 
     public void UpdateGameState(GameState newstate){
@@ -133,6 +164,10 @@ public class GameManager : MonoBehaviour
         if(num == 2){
             ch2Trigger[indx] = b;
         }
+        if (num == 3)
+        {
+            ch3Trigger[indx] = b;
+        }
     }
 
     public bool GetTrigger(int num, int indx){
@@ -141,6 +176,9 @@ public class GameManager : MonoBehaviour
         }
         if(num == 2){
             return ch2Trigger[indx];
+        }
+        if (num == 3) {
+            return ch3Trigger[indx];
         }
         return false;
     }
@@ -169,13 +207,17 @@ public class GameManager : MonoBehaviour
     }
 
     public void OpenScene(string levelName){
-        //previousScene = SceneManager.GetActiveScene ().name;
+        previousScene = SceneManager.GetActiveScene ().name;
         SceneManager.LoadScene(levelName);
+    }
+
+    public void OpenPrevScene(){
+        SceneManager.LoadScene(previousScene);
     }
 
     public void OpenLevel(int i){
         if(levelUnlock[i-1] == true){
-            //previousScene = SceneManager.GetActiveScene ().name;
+            previousScene = SceneManager.GetActiveScene ().name;
             SceneManager.LoadScene("Chapter" + i);
         }  
     }
@@ -220,6 +262,12 @@ public class GameManager : MonoBehaviour
         {
             ch2Trigger[i] = false;
         }
+
+        for (int i = 0; i < ch3Trigger.Count; i++)
+        {
+            ch3Trigger[i] = false;
+        }
+
 
         inv.resetInv();
 

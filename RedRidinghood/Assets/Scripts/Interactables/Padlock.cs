@@ -7,19 +7,20 @@ using TMPro;
 public class Padlock : MonoBehaviour
 {
     public int lockNum;
-    public List<char>characterCode = new List<char>();
+    public List<char> characterCode = new List<char>();
     public int numChars;
     public bool isUnlocked;
-    private List<char>playerCodeInput = new List<char>();
-    // Start is called before the first frame update
+    private List<char> playerCodeInput = new List<char>();
     public GameObject inputFieldPrefab; // Reference to the InputField prefab
     private List<TMP_InputField> inputFields = new List<TMP_InputField>(); // List to store InputField components
+    private  bool containsZero;
 
     void Start()
     {
         isUnlocked = false;
+        containsZero = true;
 
-        // Instantiate 5 InputField boxes
+        // Instantiate InputField boxes
         for (int i = 0; i < numChars; i++)
         {
             GameObject inputFieldObject = Instantiate(inputFieldPrefab, this.transform);
@@ -31,20 +32,15 @@ public class Padlock : MonoBehaviour
                 inputField.onValueChanged.AddListener(SaveInputToList);
             }
         }
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Return)){
-        //     CheckCodeInput();
-        // }  
-
-        //CheckCodeInput();
-
-        if(isUnlocked==true){
+        if (isUnlocked)
+        {
             GameManager.Instance.SetGateUnlock(lockNum, true);
-        } 
+        }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             // Destroy the instantiated canvas and its children
@@ -67,26 +63,41 @@ public class Padlock : MonoBehaviour
         }
 
         CheckCodeInput();
+
+        // Check if "0" exists in characterCode
+        // Check if each character matches the characterCode
+       
+        for (int i = 0; i < numChars; i++){
+            if (playerCodeInput[i] == '0')
+            {
+                containsZero = true;
+                break;
+            }else{ 
+                containsZero = false; 
+
+            }
+        }
+        
+
+        // If "0" does not exist in characterCode, set input field texts to "0"
+        if (!containsZero && isUnlocked!=true)
+        {
+            foreach (TMP_InputField inputField in inputFields)
+            {
+                inputField.text = "0";
+            }
+        }
+    
     }
 
-    void CheckCodeInput(){
-        // int numSame = 0;
-        // for (int i = 0; i < numChars; i++){
-        //     if(characterCode[i]==playerCodeInput[i]){
-        //         numSame++;
-        //     }else{
-        //         numSame = 0;
-        //         break;
-        //     }    
-        // }
-        // if(numSame == numChars-1){
-        //     isUnlocked = true;
-        // }
+    void CheckCodeInput()
+    {
         if (playerCodeInput.Count != numChars)
         {
             Debug.Log("Incorrect code length");
             return;
         }
+ 
 
         // Check if each character matches the characterCode
         for (int i = 0; i < numChars; i++)
@@ -103,7 +114,8 @@ public class Padlock : MonoBehaviour
         isUnlocked = true;
     }
 
-    public void SetLockNum(int n){
+    public void SetLockNum(int n)
+    {
         lockNum = n;
     }
 }

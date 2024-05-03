@@ -11,6 +11,8 @@ TagManager:
   - Lov
   - Sunflower
   - Blackrose
+  - Enemy
+  - ThirdPOVCamera
   layers:
   - Default
   - TransparentFX

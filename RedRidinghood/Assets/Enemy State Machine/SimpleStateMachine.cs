@@ -6,6 +6,9 @@ using UnityEngine.AI;
 
 public class SimpleStateMachine : MonoBehaviour
 {
+    public Vector3 enemyInitialPosition = new Vector3(-26,0,45);
+    private SpriteRenderer sr;
+
     //  State Machine Variables
     public enum State { Patrol, Attack, Search }
     public State currentState;
@@ -14,10 +17,11 @@ public class SimpleStateMachine : MonoBehaviour
     private NavMeshAgent agent;
     private float clockTime;
     public float searchingDelay = 10f;
-    private Transform target;
+    private GameObject target;
+    private PlayerMovement targetMovementScript;
     public Transform[] patrolPoints;
-    public float visionDistanceRange = 100f;
-    public float visionAngleRange = 45f;
+    public static float visionDistanceRange = 20f;
+    public static float visionAngleRange = 180f; // SINCE WE CHANGE THIS ONE IN THE SCRIPT, IDK IF IT WORKS AS STATIC
 
     // Enemy abilities
     public float patrolSpeed = 7f;
@@ -36,9 +40,11 @@ public class SimpleStateMachine : MonoBehaviour
 
     private void Start()
     {
-        currentState = State.Search;
+        currentState = State.Patrol;
         agent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player");
+        targetMovementScript = target.GetComponent<PlayerMovement>();
+        sr = GetComponent<SpriteRenderer>();
 
         // Disabling auto-braking allows for continuous movement
         // between points (ie, the agent doesn't slow down as it
@@ -48,7 +54,16 @@ public class SimpleStateMachine : MonoBehaviour
 
     void Update()
     {
-        StateMachine();
+        if (targetMovementScript.playerFrozen)
+        {
+            transform.position = enemyInitialPosition;
+        }
+        else
+        {
+            StateMachine();
+        }
+        sr.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
     }
 
     /*
@@ -79,9 +94,10 @@ public class SimpleStateMachine : MonoBehaviour
     {
         currentState = state;
     }
+
     void Patrol()
     {
-        Debug.Log("Patrol :)");
+        //Debug.Log("Patrol :)");
 
         // Check if we have patrol points
         if (patrolPoints == null)
@@ -98,27 +114,27 @@ public class SimpleStateMachine : MonoBehaviour
         if (SeesPlayer())
         {
             SetAgentMovement(10f, 200f, 8f, 0.5f);
-            visionAngleRange = 180f;
+            //visionAngleRange = 180f;
             GoToState(State.Attack);
         }
     }
     void Attack() {
 
-        Debug.Log("Attack >:(");
+        //Debug.Log("Attack >:(");
 
-        agent.destination = target.position;
+        agent.destination = target.transform.position;
 
         if (!SeesPlayer()) // Search State
         {
             SetAgentMovement(5f, 240f, 16f, 0.5f);
-            visionAngleRange = 45f;
+            //visionAngleRange = 90f;
             clockTime = Time.time;
             GoToState(State.Search);
         }
     }
     void Search() {
 
-        Debug.Log("Searching :|");
+        //Debug.Log("Searching :|");
 
         Vector3 selfPos = transform.position;
         float offSetRange = 10f;
@@ -134,14 +150,14 @@ public class SimpleStateMachine : MonoBehaviour
         if (SeesPlayer()) // Attack State
         {
             SetAgentMovement(10f, 200f, 8f, 0.5f);
-            visionAngleRange = 180f;
+            //visionAngleRange = 180f;
             GoToState(State.Attack);
         }
 
         if (clockTime + searchingDelay < Time.time) // Patrol State
         {
             SetAgentMovement(7f, 240f, 12f, 0.5f);
-            visionAngleRange = 45f;
+            //visionAngleRange = 90f;
             GoToState(State.Patrol);
         }
 
@@ -163,7 +179,7 @@ public class SimpleStateMachine : MonoBehaviour
 
     private bool SeesPlayer()
     {
-        Vector3 toTarget = target.position - transform.position;
+        Vector3 toTarget = target.transform.position - transform.position;
 
         bool isWithinRange = false;
 
@@ -172,7 +188,7 @@ public class SimpleStateMachine : MonoBehaviour
 
         if (Physics.Raycast(transform.position, toTarget, out RaycastHit hit, visionDistanceRange))
         {
-            isWithinRange = (hit.transform.root == target);
+            isWithinRange = (hit.transform.root == target.transform);
             //Debug.Log("Range? = " + isWithinRange);
         }
 

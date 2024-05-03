@@ -8,6 +8,8 @@ public class Checkpoint : MonoBehaviour, IInteractable
     public AudioClip interactSound;
     private GameObject glowObject;
     private GameObject darkObject;
+
+
     [SerializeField] private string _prompt;
     public string InteractionPrompt => _prompt;
 

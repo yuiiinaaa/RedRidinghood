@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9ca2d682f204aa293a8ed94347c6c8, type: 3}
+  m_Name: Choice3.2
+  m_EditorClassIdentifier: 
+  isTriggered: 0
+  leftID: 302
+  rightID: 303
+  leftChoice: '"Great idea, thanks!"'
+  rightChoice: '"Well what if I don''t want to?"'
+  LinesL:
+  - "Right, I thought so too. Oh and by the way, your granny doesn\u2019t like lilies."
+  LinesR:
+  - "Well then\u2026 I guess you can just stay here with the monster forever."
