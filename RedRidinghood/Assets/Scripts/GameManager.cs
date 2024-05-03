@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    static string previousScene;
     public PlayerInventory inv;
     public GameState State;
 
@@ -194,13 +195,17 @@ public class GameManager : MonoBehaviour
     }
 
     public void OpenScene(string levelName){
-        //previousScene = SceneManager.GetActiveScene ().name;
+        previousScene = SceneManager.GetActiveScene ().name;
         SceneManager.LoadScene(levelName);
+    }
+
+    public void OpenPrevScene(){
+        SceneManager.LoadScene(previousScene);
     }
 
     public void OpenLevel(int i){
         if(levelUnlock[i-1] == true){
-            //previousScene = SceneManager.GetActiveScene ().name;
+            previousScene = SceneManager.GetActiveScene ().name;
             SceneManager.LoadScene("Chapter" + i);
         }  
     }
