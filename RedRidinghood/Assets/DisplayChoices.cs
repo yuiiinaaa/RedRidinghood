@@ -18,6 +18,9 @@ public class DisplayChoices : MonoBehaviour
     public string leftText;
     public string rightText;
 
+    public bool leftBP;
+    public bool rightBP;
+
     public int currentLeftID;
     public int currentRightID;
 
@@ -47,8 +50,8 @@ public class DisplayChoices : MonoBehaviour
     void Update()
     {
         if(leftButton!=null && rightButton!=null){
-            bool leftBP = leftButton.GetComponent<ChoiceButtonScript>().isPressed;
-            bool rightBP = rightButton.GetComponent<ChoiceButtonScript>().isPressed;
+            leftBP = leftButton.GetComponent<ChoiceButtonScript>().isPressed;
+            rightBP = rightButton.GetComponent<ChoiceButtonScript>().isPressed;
 
             if(leftBP){
                 Debug.Log("lb pressed");
