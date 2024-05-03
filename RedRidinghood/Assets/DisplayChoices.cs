@@ -51,6 +51,7 @@ public class DisplayChoices : MonoBehaviour
             bool rightBP = rightButton.GetComponent<ChoiceButtonScript>().isPressed;
 
             if(leftBP){
+                Debug.Log("lb pressed");
                 GameManager.Instance.SetChoiceValue(currentLeftID, true);
                 ToggleTransparency();
                 
@@ -60,6 +61,7 @@ public class DisplayChoices : MonoBehaviour
                 choicePressed = false;
 
             }else if(rightBP){
+                Debug.Log("lb pressed");
                 GameManager.Instance.SetChoiceValue(currentRightID, true);
                 ToggleTransparency();
 
