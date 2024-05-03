@@ -17,7 +17,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b623c3942502b40209fd7da48592a9d8, type: 2}
   - {fileID: 11400000, guid: f2c62dae2b55a4138a264ee2d2d390fa, type: 2}
   - {fileID: 11400000, guid: b440a8f1dfe5c426eb2111f8a5f92dc3, type: 2}
-  - {fileID: 11400000, guid: 03e1c918b64c74822bea03492ba3cb75, type: 2}
   - {fileID: 11400000, guid: 511deeaef54114a459e4ea81a9777396, type: 2}
   - {fileID: 11400000, guid: b2c20b08c807a324ea6ac2bc4ba4e674, type: 2}
   - {fileID: 11400000, guid: 0f28eeb4b3e0c924c875ba59818d005c, type: 2}
@@ -27,3 +26,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 26ea2e8a7d63d194c9981bdecea05992, type: 2}
   flowerAmount: 1
   maxGlow: 10
+  lavenderAmount: 0
+  tulipAmount: 0
+  lilyAmount: 0
+  lovAmount: 0
+  sunflowerAmount: 0
+  blackroseAmount: 0

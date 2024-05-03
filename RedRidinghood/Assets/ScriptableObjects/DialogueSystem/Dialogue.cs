@@ -242,7 +242,7 @@ public class Dialogue : MonoBehaviour
         TriggerScriptLine(3, 1);
         TriggerScriptLine(3, 2);
         TriggerScriptLine(3, 3);
-        //TriggerScriptLine(2, 4);
+        TriggerScriptLine(3, 4);
 
         if (choicesToggled == true && choiceFunction.choicePressed == false)
         {
@@ -287,23 +287,23 @@ public class Dialogue : MonoBehaviour
 
             }
 
-            /**
             else if (textComponent.text == dialogueScript[3].Lines[index])
             {
-                if (GameManager.Instance.GetChoiceValue(204))
+                if (GameManager.Instance.GetChoiceValue(304))
                 {
                     dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(1, 0);
 
                 }
-                else if (GameManager.Instance.GetChoiceValue(205))
+                else if (GameManager.Instance.GetChoiceValue(305))
                 {
                     dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(2, 0);
                 }
                 choicesToggled = false;
                 NextLine();
-                //GameManager.Instance.SetTrigger(2,4,true);
+                // GameManager.Instance.SetTrigger(3, 4, true);
             }
-            **/
+
+
 
         }
 
