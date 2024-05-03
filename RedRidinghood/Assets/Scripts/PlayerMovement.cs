@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     //AudioSource audioData;
     AudioSource walkSound;
     public float velocity = 15f;
-
+float horizontal;
+        float vertical;
 
     //movement speed in units per second
     public float movementSpeed = 2f;
@@ -41,17 +42,19 @@ public class PlayerMovement : MonoBehaviour
             UpdateMovement();
         } else
         {
-            m_Animator.SetBool("Forward", false);
-            m_Animator.SetBool("Right", false);
-            m_Animator.SetBool("Left", false);
-            m_Animator.SetBool("Torwards", false);
-        }
+        //     m_Animator.SetBool("Forward", false);
+        //     m_Animator.SetBool("Right", false);
+        //     m_Animator.SetBool("Left", false);
+        //     m_Animator.SetBool("Torwards", false);
+         }
+         Walking();
+        m_Animator.enabled = !GameManager.Instance.GetCutsceneTrigger();
     }
 
     void UpdateMovement(){
         // getting input from keyboard
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
 
         //m_Movement.Set(horizontal, 0f, vertical);
         //m_Movement.Normalize();
@@ -64,19 +67,19 @@ public class PlayerMovement : MonoBehaviour
         //m_Animator.SetBool("IsWalking", isWalking);
         
 
-        //Dasol trying to add walking sfx
-        if (isWalking && walkToggle == false)
-        {
-            walkSound.Play();
-            walkToggle = true;
-            //AudioSource.PlayClipAtPoint(walkSound, transform.position);
-            //Debug.Log("iswalking");
-        }
-        if (!isWalking)
-        {
-            walkSound.Stop();
-            walkToggle = false;
-        }
+        // //Dasol trying to add walking sfx
+        // if (isWalking && walkToggle == false)
+        // {
+        //     walkSound.Play();
+        //     walkToggle = true;
+        //     //AudioSource.PlayClipAtPoint(walkSound, transform.position);
+        //     //Debug.Log("iswalking");
+        // }
+        // if (!isWalking)
+        // {
+        //     walkSound.Stop();
+        //     walkToggle = false;
+        // }
 
         m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed + new Vector3(0f, m_Rigidbody.velocity.y, 0f);
 
@@ -129,6 +132,26 @@ public class PlayerMovement : MonoBehaviour
         //m_Rigidbody.velocity = new Vector3(horizontal, 0f, vertical).normalized * movementSpeed + new Vector3(0f, m_Rigidbody.velocity.y, 0f);
 
         
+    }
+private bool IsWalking(){
+    return horizontal != 0 ||vertical != 0 ;
+}
+    private void Walking(){
+
+        
+         //Dasol trying to add walking sfx
+        if (IsWalking() && walkToggle == false)
+        {
+            walkSound.Play();
+            walkToggle = true;
+            //AudioSource.PlayClipAtPoint(walkSound, transform.position);
+            //Debug.Log("iswalking");
+        }
+        if (!IsWalking() || GameManager.Instance.GetCutsceneTrigger())
+        {
+            walkSound.Stop();
+            walkToggle = false;
+        }
     }
 
     // allows applying root motion
