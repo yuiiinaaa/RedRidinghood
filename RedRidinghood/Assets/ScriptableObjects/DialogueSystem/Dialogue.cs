@@ -243,21 +243,22 @@ public class Dialogue : MonoBehaviour
         TriggerScriptLine(3, 2);
         TriggerScriptLine(3, 3);
         TriggerScriptLine(3, 4);
+        TriggerScriptLine(3, 5);
+        TriggerScriptLine(3, 6);
 
         if (choicesToggled == true && choiceFunction.choicePressed == false)
         {
             //display the pressed choices dialogue lines
-            Debug.Log(textComponent.text == dialogueScript[1].Lines[index]);
 
             if (textComponent.text == dialogueScript[1].Lines[index])
             { //maybe this will work?
 
-                Debug.Log("if (textComponent.text == dialogueScript[1].Lines[index])");
+                // Debug.Log("if (textComponent.text == dialogueScript[1].Lines[index])");
 
                 if (GameManager.Instance.GetChoiceValue(300))
                 {
                     dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(1, 0);
-                    Debug.Log("dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(1, 0)");
+                    // Debug.Log("dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(1, 0)");
 
                 }
                 else if (GameManager.Instance.GetChoiceValue(301))
@@ -284,29 +285,56 @@ public class Dialogue : MonoBehaviour
                 choicesToggled = false;
                 NextLine();
                 GameManager.Instance.SetTrigger(3, 3, true);
-
             }
 
             else if (textComponent.text == dialogueScript[3].Lines[index])
             {
+                // Debug.Log("textComponent.text == dialogueScript[3].Lines[index]");
                 if (GameManager.Instance.GetChoiceValue(304))
                 {
-                    dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(1, 0);
+                    dialogueScript[3].Lines[1] = dialogueScript[4].myChoices.GetLines(1, 0);
 
                 }
                 else if (GameManager.Instance.GetChoiceValue(305))
                 {
-                    dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(2, 0);
+                    dialogueScript[3].Lines[1] = dialogueScript[4].myChoices.GetLines(2, 0);
                 }
                 choicesToggled = false;
                 NextLine();
-                // GameManager.Instance.SetTrigger(3, 4, true);
             }
 
+            else if (textComponent.text == dialogueScript[4].Lines[index])
+            {
+                choicesToggled = false;
+                NextLine();
+                if (choiceFunction.leftBP)
+                {
+                    GameManager.Instance.SetTrigger(3, 5, true);
+                    Debug.Log("Ready");
+                    GameManager.Instance.SetTrigger(3, 6, true);
+                } else if (choiceFunction.rightBP)
+                {
+                    Debug.Log("Not ready");
+                }
+            }
 
+            else if (textComponent.text == dialogueScript[6].Lines[index])
+            {
+                if (GameManager.Instance.GetChoiceValue(306))
+                {
+                    dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(1, 0);
+
+                }
+                else if (GameManager.Instance.GetChoiceValue(307))
+                {
+                    dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(2, 0);
+                }
+                choicesToggled = false;
+                NextLine();
+                GameManager.Instance.SetTrigger(3, 3, true);
+            }
 
         }
-
     }
 
     private void TriggerScriptLine(int chap, int curIndx){
