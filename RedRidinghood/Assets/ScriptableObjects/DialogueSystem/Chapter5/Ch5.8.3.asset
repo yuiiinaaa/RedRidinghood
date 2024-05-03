@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c1b31b2b21c7495388a3ae53d6338e6, type: 3}
-  m_Name: Ch5.9.0
+  m_Name: Ch5.8.3
   m_EditorClassIdentifier: 
   hasChoice: 1
-  myChoices: {fileID: 11400000, guid: efb06255269db4fa383d43fc4fcf031b, type: 2}
+  myChoices: {fileID: 11400000, guid: a7ec085f89f394e669f7dcea412d0799, type: 2}
   name: 
   isTriggered: 0
   Lines:
-  - I don't think we went through the right door. . .
+  - "Look at me, Little Red. What do you see? \n"

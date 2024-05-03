@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c1b31b2b21c7495388a3ae53d6338e6, type: 3}
-  m_Name: Ch5.9.0
+  m_Script: {fileID: 11500000, guid: ca9ca2d682f204aa293a8ed94347c6c8, type: 3}
+  m_Name: Choice5.0
   m_EditorClassIdentifier: 
-  hasChoice: 1
-  myChoices: {fileID: 11400000, guid: efb06255269db4fa383d43fc4fcf031b, type: 2}
-  name: 
   isTriggered: 0
-  Lines:
-  - I don't think we went through the right door. . .
+  leftID: 500
+  rightID: 501
+  leftChoice: '"Grandma?. . ."'
+  rightChoice: '"Hello?. . ."'
+  LinesL:
+  - . . .
+  LinesR:
+  - '. . . '
