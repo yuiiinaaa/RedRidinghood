@@ -48210,7 +48210,7 @@ PrefabInstance:
     - target: {fileID: 1401791682436035942, guid: 7428e0808f84b9b46b0b142ba98af7b8,
         type: 3}
       propertyPath: dialogueScript.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1401791682436035942, guid: 7428e0808f84b9b46b0b142ba98af7b8,
         type: 3}
@@ -48223,6 +48223,18 @@ PrefabInstance:
       propertyPath: dialogueScript.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 8009bed4a8765b5419e1d6f7c12d5605,
+        type: 2}
+    - target: {fileID: 1401791682436035942, guid: 7428e0808f84b9b46b0b142ba98af7b8,
+        type: 3}
+      propertyPath: dialogueScript.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 93966c1f99f819040806fe8b26a6e291,
+        type: 2}
+    - target: {fileID: 1401791682436035942, guid: 7428e0808f84b9b46b0b142ba98af7b8,
+        type: 3}
+      propertyPath: dialogueScript.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1cfa0a61005c05c4789cc7018677ac05,
         type: 2}
     - target: {fileID: 6533919562294070687, guid: 7428e0808f84b9b46b0b142ba98af7b8,
         type: 3}

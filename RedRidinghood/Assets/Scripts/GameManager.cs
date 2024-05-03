@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        for (int key = 300; key <= 303; key++)
+        for (int key = 300; key <= 307; key++)
         {
             if (!choicesSelected.ContainsKey(key))
             {
