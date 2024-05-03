@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PatrickScene!.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chapter5/Ch5 S9.unity
     guid: 82dde25f9a89e46da953d2d91c4749cc
+  - enabled: 1
+    path: Assets/Scenes/Ch1 Official.unity
+    guid: e5a9d0fab16d63c438a176972b6a2108
+  - enabled: 1
+    path: Assets/Scenes/Ch2 Official.unity
+    guid: d88e3dc01cbb74e21b0967b77d1ac27d
   m_configObjects: {}
