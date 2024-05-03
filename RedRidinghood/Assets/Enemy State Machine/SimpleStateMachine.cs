@@ -16,8 +16,8 @@ public class SimpleStateMachine : MonoBehaviour
     public float searchingDelay = 10f;
     private Transform target;
     public Transform[] patrolPoints;
-    public float visionDistanceRange = 100f;
-    public float visionAngleRange = 45f;
+    public static float visionDistanceRange = 10f;
+    public static float visionAngleRange = 45f; // SINCE WE CHANGE THIS ONE IN THE SCRIPT, IDK IF IT WORKS AS STATIC
 
     // Enemy abilities
     public float patrolSpeed = 7f;

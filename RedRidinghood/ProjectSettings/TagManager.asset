@@ -11,6 +11,7 @@ TagManager:
   - Lov
   - Sunflower
   - Blackrose
+  - Enemy
   layers:
   - Default
   - TransparentFX
