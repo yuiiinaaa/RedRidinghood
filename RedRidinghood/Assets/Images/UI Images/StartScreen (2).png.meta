@@ -121,18 +121,876 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Start1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 712
+        width: 283
+        height: 138
+      alignment: 9
+      pivot: {x: 0.4999997, y: 0.5000005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d75c8c8d75294be0bcfb1226865763e
+      internalID: 1812802829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 859
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f71d920d485a4a8a8b0ece8ae81528b
+      internalID: -208973933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_2
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 863
+        width: 58
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da56a5d328a1d464c90884b5e6d60412
+      internalID: 1919003865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_3
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 859
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f75bd1677f94bfaae00c7b2a91e394
+      internalID: 1183784882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_4
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 859
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a1ea77fc09045a1bd6b27f58f2054e
+      internalID: -486102301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Start2
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 720
+        width: 575
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801f15a25bbee408a98ab20317d37463
+      internalID: -241847498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_6
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 742
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b5853c690f1431a9ce3c76c220bb9e
+      internalID: -785579028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Start3
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 727
+        width: 575
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63da69139945e4cef90d2e317bd2dbda
+      internalID: -409098205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_8
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 748
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ed9b2fa82d84900a01caca3cfdddd3
+      internalID: -466667413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_9
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 749
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d0cd8d3ba5745cca680eaf09844d14
+      internalID: -237008305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_10
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 743
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ffbc7744f0e483e87f650597043fb1
+      internalID: -355460188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Continue1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 472
+        width: 435
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c4b882509f84af0955346da38fefe9
+      internalID: -7532994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_12
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 962
+        width: 49
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9d6cc67dcbe42fe834717d5b8ba221
+      internalID: 163829825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_13
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 976
+        width: 55
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1831ccc1535314a839a62317083a7892
+      internalID: 287825359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_14
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 975
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7400b74ea1f464af39dd391670c39b9e
+      internalID: -1024378495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_15
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 481
+        width: 13
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7806fff7b2314424b8fe2e4ca6d4be9
+      internalID: -1235352980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_16
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 985
+        width: 55
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac564d899a4c413db0925636042d576
+      internalID: -1581086432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_17
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 986
+        width: 56
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c21e61d7000412fb19c696a273d130
+      internalID: -1959616772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_18
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 987
+        width: 42
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764ca03d1bfea4a8a83523ba5871ba01
+      internalID: -507157523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Continue2
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 481
+        width: 571
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41674bfb3c744e3398132e0146d3daa
+      internalID: -1371891570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_20
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 496
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a2e4904633a4c53b760f90a3fd4e8b
+      internalID: -877797789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Continue3
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 487
+        width: 564
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a65c71a872264443ac5012e430e0d1c
+      internalID: 1115890603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_22
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 502
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf86dad414114a0da735b4ddcd553de
+      internalID: -863012184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_23
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 503
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786d279e14c994cd78b48ca862743bcd
+      internalID: 564423031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_24
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 497
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38afb8452f2b949efb5969699462dd68
+      internalID: 326586207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slumber1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 216
+        width: 421
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a16ec9c4b354f7a8be5cee9b743325
+      internalID: 91454395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_26
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 72
+        width: 44
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 234cfcd8a51534d518dd5c52e487f081
+      internalID: -1769249517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_27
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 77
+        width: 56
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea56a972d7134eb1a2f29bc4a22daa9
+      internalID: -1206053866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_28
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 64
+        width: 69
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6b4b192297e4b1eae580b476820fbf
+      internalID: 824866717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_29
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 54
+        width: 52
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e561b0398bf7e4c91b59c43bf08a534c
+      internalID: 659813220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_30
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 44
+        width: 42
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc2a34e4ec7b4a43a1bcf0cd4b318c3
+      internalID: -276836017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_31
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 51
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b31f50d830184f93b8dd7a131fbbab3
+      internalID: -1879951741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slumber2
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 227
+        width: 573
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3c5eaa826cb449fafa386eb1e352f7
+      internalID: 959128704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_33
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 235
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f576f01dd5c714d63ac77fb39f9eb2e8
+      internalID: -1606693272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slumber3
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 230
+        width: 566
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb39ba4ab2afc4ebfa6b2bce47257e88
+      internalID: -307410849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_35
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 241
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de0f3769ebc242c1b7cb3ed6b33e979
+      internalID: -1239475361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_36
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 242
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d08f4392d6504857a7a31c440f919a3
+      internalID: 1061489028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_37
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 236
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30603ec3838fb4690a9b17638fe424dd
+      internalID: 1590899439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreen (2)_0
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 53
+        width: 124
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b2c0ca7cf8d459ebed593de1e260d9
+      internalID: 19833512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ec7b5dfefef444d9f9286f6ce4bf4b83
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Continue1: -7532994
+      Continue2: -1371891570
+      Continue3: 1115890603
+      Slumber1: 91454395
+      Slumber2: 959128704
+      Slumber3: -307410849
+      Start1: 1812802829
+      Start2: -241847498
+      Start3: -409098205
+      StartScreen (2)_0: 19833512
+      StartScreen (2)_1: -208973933
+      StartScreen (2)_10: -355460188
+      StartScreen (2)_12: 163829825
+      StartScreen (2)_13: 287825359
+      StartScreen (2)_14: -1024378495
+      StartScreen (2)_15: -1235352980
+      StartScreen (2)_16: -1581086432
+      StartScreen (2)_17: -1959616772
+      StartScreen (2)_18: -507157523
+      StartScreen (2)_2: 1919003865
+      StartScreen (2)_20: -877797789
+      StartScreen (2)_22: -863012184
+      StartScreen (2)_23: 564423031
+      StartScreen (2)_24: 326586207
+      StartScreen (2)_26: -1769249517
+      StartScreen (2)_27: -1206053866
+      StartScreen (2)_28: 824866717
+      StartScreen (2)_29: 659813220
+      StartScreen (2)_3: 1183784882
+      StartScreen (2)_30: -276836017
+      StartScreen (2)_31: -1879951741
+      StartScreen (2)_33: -1606693272
+      StartScreen (2)_35: -1239475361
+      StartScreen (2)_36: 1061489028
+      StartScreen (2)_37: 1590899439
+      StartScreen (2)_4: -486102301
+      StartScreen (2)_6: -785579028
+      StartScreen (2)_8: -466667413
+      StartScreen (2)_9: -237008305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
