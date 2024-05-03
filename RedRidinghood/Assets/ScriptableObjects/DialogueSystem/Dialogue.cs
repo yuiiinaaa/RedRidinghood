@@ -103,7 +103,9 @@ public class Dialogue : MonoBehaviour
             chapter2Triggers();
         }else if (currentChapter == "3"){
             chapter3Triggers();
-            }
+        }else if (currentChapter == "5.8"){
+            chapter5Triggers();
+        }
         }
        
 
@@ -320,20 +322,82 @@ public class Dialogue : MonoBehaviour
 
             else if (textComponent.text == dialogueScript[6].Lines[index])
             {
-                if (GameManager.Instance.GetChoiceValue(306))
-                {
+                if (GameManager.Instance.GetChoiceValue(306)){
                     dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(1, 0);
 
                 }
-                else if (GameManager.Instance.GetChoiceValue(307))
-                {
+                else if (GameManager.Instance.GetChoiceValue(307)){
                     dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(2, 0);
                 }
                 choicesToggled = false;
                 NextLine();
                 GameManager.Instance.SetTrigger(3, 3, true);
             }
+        }
+    }
 
+    void chapter5Triggers(){
+        TriggerScriptLine(5,1);
+        TriggerScriptLine(5,2);
+        TriggerScriptLine(5,3);
+        TriggerScriptLine(5,4);
+        TriggerScriptLine(5,5);
+        TriggerScriptLine(5,6);
+        //TriggerScriptLine(5,6);
+
+        if(choicesToggled == true && choiceFunction.choicePressed == false){
+
+            //display the pressed choices dialogue lines
+            //Ch5.8.1
+            if(textComponent.text == dialogueScript[1].Lines[index]){ //maybe this will work?
+                if( GameManager.Instance.GetChoiceValue(502)){
+                    dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(1,0);
+
+                }else if(GameManager.Instance.GetChoiceValue(503)){
+                    dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(2,0);
+                }
+                choicesToggled = false;
+                NextLine();
+                GameManager.Instance.SetTrigger(5,2,true);
+                GameManager.Instance.SetTrigger(5,3,true);
+                
+
+            //Ch5.8.3
+            }else if(textComponent.text == dialogueScript[3].Lines[index]){
+                if( GameManager.Instance.GetChoiceValue(504)){
+                    dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(1,0);
+
+                }else if(GameManager.Instance.GetChoiceValue(505)){
+                    dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(2,0);
+                }
+                choicesToggled = false;
+                NextLine();
+                GameManager.Instance.SetTrigger(5,4,true);
+                GameManager.Instance.SetTrigger(5,5,true);
+
+            //Ch5.8.5
+            }else if(textComponent.text == dialogueScript[5].Lines[index]){
+                if( GameManager.Instance.GetChoiceValue(506)){
+                    dialogueScript[5].Lines[1] = dialogueScript[5].myChoices.GetLines(1,0);
+
+                }else if(GameManager.Instance.GetChoiceValue(507)){
+                    dialogueScript[5].Lines[1] = dialogueScript[5].myChoices.GetLines(2,0);
+                }
+                choicesToggled = false;
+                NextLine();
+                GameManager.Instance.SetTrigger(5,6,true);
+            
+            }else if(textComponent.text == dialogueScript[6].Lines[index]){
+                if( GameManager.Instance.GetChoiceValue(508)){
+                    dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(1,0);
+
+                }else if(GameManager.Instance.GetChoiceValue(509)){
+                    dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(2,0);
+                }
+                choicesToggled = false;
+                NextLine();
+                //GameManager.Instance.SetTrigger(5,6,true);
+            }
         }
     }
 

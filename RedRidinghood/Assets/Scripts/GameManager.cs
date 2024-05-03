@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public static List<bool>ch1Trigger = new List<bool>();
     public static List<bool>ch2Trigger = new List<bool>();
     public static List<bool>ch3Trigger = new List<bool>();
+    public static List<bool>ch5Trigger = new List<bool>();
 
     public static List<bool>gatesUnlocked = new List<bool>();
 
@@ -60,6 +61,14 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        for (int key = 500; key <= 511; key++)
+        {
+            if (!choicesSelected.ContainsKey(key))
+            {
+                choicesSelected.Add(key, false);
+            }
+        }
+
         // Setting cinemachine far clip plane
         camera = GameObject.FindGameObjectWithTag("ThirdPOVCamera").GetComponent<CinemachineVirtualCamera>();
         camera.m_Lens.FarClipPlane = 20f;
@@ -74,23 +83,19 @@ public class GameManager : MonoBehaviour
         //may need to move to on awake
         for(int i =0; i< 10; i++){
             ch1Trigger.Add(false);
+            ch2Trigger.Add(false);
+            ch3Trigger.Add(false);
+            ch5Trigger.Add(false);
         }
         ch1Trigger[0] = true;
-
-        for(int i =0; i< 10; i++){
-            ch2Trigger.Add(false);
-        }
         ch2Trigger[0] = true;
-
-        for (int i = 0; i < 10; i++)
-        {
-            ch3Trigger.Add(false);
-        }
         ch3Trigger[0] = true;
+        ch5Trigger[0] = true;
 
         //THIS IS JUST FOR DEBUGGING FOR CH2, DELETE LATER PLS
         ch2Trigger[1] = true;
         ch3Trigger[1] = true;
+        ch5Trigger[1] = true;
 
 
         for (int i =0; i< 10; i++){
@@ -169,6 +174,10 @@ public class GameManager : MonoBehaviour
         {
             ch3Trigger[indx] = b;
         }
+        if (num == 5)
+        {
+            ch5Trigger[indx] = b;
+        }
     }
 
     public bool GetTrigger(int num, int indx){
@@ -180,6 +189,9 @@ public class GameManager : MonoBehaviour
         }
         if (num == 3) {
             return ch3Trigger[indx];
+        }
+        if (num == 5) {
+            return ch5Trigger[indx];
         }
         return false;
     }
@@ -288,6 +300,10 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < ch3Trigger.Count; i++)
         {
             ch3Trigger[i] = false;
+        }
+        for (int i = 0; i < ch5Trigger.Count; i++)
+        {
+            ch5Trigger[i] = false;
         }
 
 
