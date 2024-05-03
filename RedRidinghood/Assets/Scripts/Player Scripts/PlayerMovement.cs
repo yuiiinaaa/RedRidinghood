@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         if (vertical > 0)
         {
             m_Animator.SetBool("Forward", true);
-            m_Rigidbody.velocity = m_Rigidbody.velocity.normalized * 7f;
+            //m_Rigidbody.velocity = m_Rigidbody.velocity.normalized * 7f;
             //Debug.Log(m_Rigidbody.velocity.x);
             //Debug.Log(m_Rigidbody.velocity.z);
         } else
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         if (vertical < 0)
         {
             m_Animator.SetBool("Towards", true);
-            m_Rigidbody.velocity = m_Rigidbody.velocity.normalized * 7f;
+            //m_Rigidbody.velocity = m_Rigidbody.velocity.normalized * 7f;
         }
         else
         {

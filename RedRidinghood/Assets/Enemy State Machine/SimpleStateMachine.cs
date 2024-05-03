@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class SimpleStateMachine : MonoBehaviour
 {
-    public Vector3 enemyInitialPosition = new Vector3(-26,0,45);
+    //public Vector3 enemyInitialPosition = new Vector3(-26,0,45);
     private SpriteRenderer sr;
 
     //  State Machine Variables
@@ -54,14 +54,15 @@ public class SimpleStateMachine : MonoBehaviour
 
     void Update()
     {
-        if (targetMovementScript.playerFrozen)
-        {
-            transform.position = enemyInitialPosition;
-        }
-        else
-        {
-            StateMachine();
-        }
+        //if (targetMovementScript.playerFrozen)
+        //{
+        //    gameObject.SetActive(false);
+        //}
+        //else
+        //{
+        //    StateMachine();
+        //}
+        StateMachine();
         sr.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
     }
