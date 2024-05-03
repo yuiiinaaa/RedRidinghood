@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
-
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public PlayerInventory inv;
     public GameState State;
+    private new CinemachineVirtualCamera camera;
 
     private bool togInteractor = false;
 
@@ -57,11 +58,13 @@ public class GameManager : MonoBehaviour
                 choicesSelected.Add(key, false);
             }
         }
+
+        // Setting cinemachine far clip plane
+        camera = GameObject.FindGameObjectWithTag("ThirdPOVCamera").GetComponent<CinemachineVirtualCamera>();
+        camera.m_Lens.FarClipPlane = 20f;
     }
 
 
-
-    // Start is called before the first frame update
     void Start()
     {   
         insideCutscene = false; 
@@ -103,7 +106,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         // if (instantiatedCanvas != null){
@@ -120,7 +122,17 @@ public class GameManager : MonoBehaviour
             instantiatedCanvas = null;
             insideCutscene = false;
         }
-        
+
+        UpdateViewRange();
+
+    }
+
+    /*
+     * When you collect a flower or put one flower down, it updates the far clip plane
+     */
+    public void UpdateViewRange()
+    {
+        camera.m_Lens.FarClipPlane = 15f + inv.flowerAmount * 5f;
     }
 
     public void UpdateGameState(GameState newstate){

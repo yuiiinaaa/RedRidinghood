@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 1848167770276806020}
   - component: {fileID: 4538609235166612624}
   - component: {fileID: 4933335366167103600}
-  - component: {fileID: 1289099729440675924}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Player
@@ -283,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bba2109fd058e94d94309bf21408c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerFrozen: 0
   velocity: 20
   movementSpeed: 5
   walkToggle: 0
@@ -320,29 +320,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _numFound: 0
---- !u!136 &1289099729440675924
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62860823420055921}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.44199848
-  m_Height: 1.3030233
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.15151167, z: 0.05800152}
 --- !u!1 &339797378424026606
 GameObject:
   m_ObjectHideFlags: 0

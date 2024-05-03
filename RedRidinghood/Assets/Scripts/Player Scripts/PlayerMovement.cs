@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [HideInInspector] public bool playerFrozen = false;
+
     Vector3 m_Movement;
     Animator m_Animator;
     Quaternion m_Rotation = Quaternion.identity;  // for storing rotation of player: default set as no rotation 
@@ -38,9 +40,12 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.Log(GameManager.Instance.GetCutsceneTrigger());
         if(!GameManager.Instance.GetCutsceneTrigger()){
+            playerFrozen = false;
             UpdateMovement();
         } else
         {
+            playerFrozen = true;
+
             m_Animator.SetBool("Forward", false);
             m_Animator.SetBool("Right", false);
             m_Animator.SetBool("Left", false);
