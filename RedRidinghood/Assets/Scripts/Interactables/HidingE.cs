@@ -7,6 +7,7 @@ public class HidingE : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
     public string InteractionPrompt => _prompt;
+    public float hidingDelay = 5f;
 
     public AudioClip hideAudio;
     //public GameObject playerActive;
@@ -14,6 +15,12 @@ public class HidingE : MonoBehaviour, IInteractable
     public bool playerToggle;
     //Rigidbody2D rb;
 
+
+    void Start()
+    {
+        playerToggle = true;
+        PlayerMovement player = GetComponent<PlayerMovement>();
+    }
 
     public bool Interact(Interactor interactor){
         // Play sound effect if assigned
@@ -39,28 +46,11 @@ public class HidingE : MonoBehaviour, IInteractable
     {
         AudioSource.PlayClipAtPoint(hideAudio, transform.position);
         player.SetActive(false);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(hidingDelay);
 
         AudioSource.PlayClipAtPoint(hideAudio, transform.position);
         player.SetActive(true);
 
-
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerToggle = true;
-        PlayerMovement player = GetComponent<PlayerMovement>();
-     
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 
