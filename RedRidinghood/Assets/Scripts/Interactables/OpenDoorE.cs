@@ -10,8 +10,13 @@ public class OpenDoorE : MonoBehaviour,  IInteractable
     public string openSceneName;
     public AudioClip interactSound; // Sound effect to play when interacted with
     // Start is called before the first frame update
+    void Awake(){
+        GameManager.Instance.SetCutsceneTrigger(false);
+
+    }
      public bool Interact(Interactor interactor)
     {
+        GameManager.Instance.SetCutsceneTrigger(true);
         StartCoroutine(DoorInteract());
         // Play sound effect if assigned
         // if (interactSound != null)
@@ -28,7 +33,7 @@ public class OpenDoorE : MonoBehaviour,  IInteractable
         {
             AudioSource.PlayClipAtPoint(interactSound, transform.position);
         }
-            yield return new WaitForSeconds(.8f);
+            yield return new WaitForSeconds(.3f);
             GameManager.Instance.OpenScene(openSceneName);
         }
 
