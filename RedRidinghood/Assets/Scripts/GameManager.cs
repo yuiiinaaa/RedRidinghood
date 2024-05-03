@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {   
         insideCutscene = false; 
+        UnlockScene();
 
         //may need to move to on awake
         for(int i =0; i< 10; i++){
@@ -215,16 +216,37 @@ public class GameManager : MonoBehaviour
     }
 
     public void UnlockScene(){
-        if(SceneManager.GetActiveScene ().name == "Chapter1"){
+        if(SceneManager.GetActiveScene ().name == "Ch1 Official"){
+            levelUnlock[0] = true;
+        } else if(SceneManager.GetActiveScene ().name == "Ch2 Official"){
             levelUnlock[1] = true;
-        } else if(SceneManager.GetActiveScene ().name == "Chapter2"){
+        }else if(SceneManager.GetActiveScene ().name == "Ch3 Official"){
             levelUnlock[2] = true;
-        }else if(SceneManager.GetActiveScene ().name == "Chapter3"){
+        }else if(SceneManager.GetActiveScene ().name == "Ch4 Official"){
+            //levelUnlock[3] = true;
+        }else if(SceneManager.GetActiveScene ().name == "Ch5 Official"){
             levelUnlock[3] = true;
-        }else if(SceneManager.GetActiveScene ().name == "Chapter4"){
-            levelUnlock[4] = true;
-        }else if(SceneManager.GetActiveScene ().name == "Chapter5"){
-            levelUnlock[5] = true;
+        }
+    }
+
+    public async void OpenLastPlayedLevel(){
+        int lastLvl = 0;
+
+        for(int i = 0; i<6; i++){
+            if(levelUnlock[i]==true){
+                lastLvl = i;
+            }else{
+                break;
+            }
+        }
+        if(lastLvl == 0){
+            SceneManager.LoadScene("Ch1 Official");
+        }else if(lastLvl == 1){
+            SceneManager.LoadScene("Ch2 Official");
+        }else if(lastLvl == 2){
+            SceneManager.LoadScene("Ch3 Official");
+        }else if(lastLvl == 3){
+            SceneManager.LoadScene("Ch5 Official");
         }
     }
 
