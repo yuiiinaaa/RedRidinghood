@@ -325,7 +325,11 @@ public class GameManager : MonoBehaviour
         foreach (var key in choicesSelected.Keys.ToList()){
             choicesSelected[key] = false;
         }
-    }   
+    } 
+
+    public void QuitGame(){
+        Application.Quit();
+    }  
 }
 
 public enum GameState{
