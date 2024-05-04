@@ -70,8 +70,9 @@ public class GameManager : MonoBehaviour
         }
 
         // Setting cinemachine far clip plane
-        camera = GameObject.FindGameObjectWithTag("ThirdPOVCamera").GetComponent<CinemachineVirtualCamera>();
-        camera.m_Lens.FarClipPlane = 20f;
+        //commented out bc was running into problems with chapter 5
+        //camera = GameObject.FindGameObjectWithTag("ThirdPOVCamera").GetComponent<CinemachineVirtualCamera>();
+       // camera.m_Lens.FarClipPlane = 20f;
     }
 
 
@@ -139,7 +140,7 @@ public class GameManager : MonoBehaviour
      */
     public void UpdateViewRange()
     {
-        camera.m_Lens.FarClipPlane = 15f + inv.flowerAmount * 5f;
+        //camera.m_Lens.FarClipPlane = 15f + inv.flowerAmount * 5f;
     }
 
     public void UpdateGameState(GameState newstate){
