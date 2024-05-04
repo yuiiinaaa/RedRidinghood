@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ch2FinalTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private GameManager gm;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        gm = null;
+        if (!GameObject.FindGameObjectWithTag("GameController").IsUnityNull())
+        {
+            gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gm != null) { Debug.Log("NO GAME MANAGER - Ch2FinalTrigger"); }
+        else
+        {
+            gm.OpenScene("Ch3");
+        }
     }
 }

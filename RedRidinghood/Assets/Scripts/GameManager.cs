@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -73,8 +74,12 @@ public class GameManager : MonoBehaviour
 
         // Setting cinemachine far clip plane
         //commented out bc was running into problems with chapter 5
-        //camera = GameObject.FindGameObjectWithTag("ThirdPOVCamera").GetComponent<CinemachineVirtualCamera>();
-       // camera.m_Lens.FarClipPlane = 20f;
+        camera = null;
+        if (!GameObject.FindGameObjectWithTag("ThirdPOVCamera").IsUnityNull())
+        {
+            camera = GameObject.FindGameObjectWithTag("ThirdPOVCamera").GetComponent<CinemachineVirtualCamera>();
+            camera.m_Lens.FarClipPlane = 20f;
+        }
     }
 
 
@@ -136,7 +141,10 @@ public class GameManager : MonoBehaviour
             insideCutscene = false;
         }
 
-        UpdateViewRange();
+        if (camera != null)
+        {
+            UpdateViewRange();
+        }
 
     }
 
@@ -145,7 +153,7 @@ public class GameManager : MonoBehaviour
      */
     public void UpdateViewRange()
     {
-        //camera.m_Lens.FarClipPlane = 15f + inv.flowerAmount * 5f;
+        camera.m_Lens.FarClipPlane = 15f + inv.flowerAmount * 5f;
     }
 
     public void UpdateGameState(GameState newstate){

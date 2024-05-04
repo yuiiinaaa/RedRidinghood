@@ -20,7 +20,7 @@ public class SimpleStateMachine : MonoBehaviour
     private GameObject target;
     private PlayerMovement targetMovementScript;
     public Transform[] patrolPoints;
-    public static float visionDistanceRange = 20f;
+    public static float visionDistanceRange = 10f;
     public static float visionAngleRange = 180f; // SINCE WE CHANGE THIS ONE IN THE SCRIPT, IDK IF IT WORKS AS STATIC
 
     // Enemy abilities

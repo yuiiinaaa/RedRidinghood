@@ -11,7 +11,7 @@ public class HidingE : MonoBehaviour, IInteractable
 
     public AudioClip hideAudio;
     //public GameObject playerActive;
-    public GameObject player;
+    private GameObject player;
     public bool playerToggle;
     //Rigidbody2D rb;
 
@@ -19,7 +19,8 @@ public class HidingE : MonoBehaviour, IInteractable
     void Start()
     {
         playerToggle = true;
-        PlayerMovement player = GetComponent<PlayerMovement>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        //PlayerMovement player = GetComponent<PlayerMovement>();
     }
 
     public bool Interact(Interactor interactor){
