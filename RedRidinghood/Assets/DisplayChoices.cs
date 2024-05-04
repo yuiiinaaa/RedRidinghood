@@ -64,7 +64,7 @@ public class DisplayChoices : MonoBehaviour
                 choicePressed = false;
 
             }else if(rightBP){
-                Debug.Log("lb pressed");
+                Debug.Log("Rb pressed");
                 GameManager.Instance.SetChoiceValue(currentRightID, true);
                 ToggleTransparency();
 

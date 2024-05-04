@@ -44,4 +44,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ch2 Official.unity
     guid: d88e3dc01cbb74e21b0967b77d1ac27d
+  - enabled: 1
+    path: Assets/Scenes/Chapter5/BadEnding1.unity
+    guid: 8f875e5bb07934197b320f17b6582f78
+  - enabled: 1
+    path: Assets/Scenes/Chapter5/GoodEnding1.unity
+    guid: ca2f46bc1e0134270af54e8aabbbaac3
+  - enabled: 1
+    path: Assets/Scenes/Chapter5/BadEnding2.unity
+    guid: 04dcea4763cf34e1db60bf7a1c896543
   m_configObjects: {}

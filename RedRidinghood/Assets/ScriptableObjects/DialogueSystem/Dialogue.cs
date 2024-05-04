@@ -5,6 +5,7 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
+    public Animator animator;
     private static TextMeshProUGUI textComponent;
     private TextMeshProUGUI hitEnter;
     public float textSpeed;
@@ -15,6 +16,8 @@ public class Dialogue : MonoBehaviour
     private bool isToggled;
     public string currentChapter;
 
+    private int corruptionLevel;
+
     //for the choices mechanic
     private DisplayChoices choiceFunction;
     // Start is called before the first frame update
@@ -23,6 +26,7 @@ public class Dialogue : MonoBehaviour
     private bool choicesToggled;
     void Start()
     {
+        corruptionLevel = 0;
         
         //get the choices box
         Transform parentTransform = this.transform;
@@ -105,6 +109,15 @@ public class Dialogue : MonoBehaviour
             chapter3Triggers();
         }else if (currentChapter == "5.8"){
             chapter5Triggers();
+        }else if (currentChapter == "GE"){
+            chapterENDTriggers();
+        }
+        else if (currentChapter == "BE"){
+            if (animator != null && (isToggled == false)){
+                Debug.Log("Huh");
+                // Trigger animation using the provided trigger name
+                animator.SetTrigger("BadEnding");
+            }
         }
         }
        
@@ -352,9 +365,11 @@ public class Dialogue : MonoBehaviour
             if(textComponent.text == dialogueScript[1].Lines[index]){ //maybe this will work?
                 if( GameManager.Instance.GetChoiceValue(502)){
                     dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(1,0);
+                    corruptionLevel-=1;
 
                 }else if(GameManager.Instance.GetChoiceValue(503)){
                     dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(2,0);
+                    corruptionLevel+=1;
                 }
                 choicesToggled = false;
                 NextLine();
@@ -366,9 +381,11 @@ public class Dialogue : MonoBehaviour
             }else if(textComponent.text == dialogueScript[3].Lines[index]){
                 if( GameManager.Instance.GetChoiceValue(504)){
                     dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(1,0);
+                    corruptionLevel-=1;
 
                 }else if(GameManager.Instance.GetChoiceValue(505)){
                     dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(2,0);
+                    corruptionLevel+=1;
                 }
                 choicesToggled = false;
                 NextLine();
@@ -379,9 +396,11 @@ public class Dialogue : MonoBehaviour
             }else if(textComponent.text == dialogueScript[5].Lines[index]){
                 if( GameManager.Instance.GetChoiceValue(506)){
                     dialogueScript[5].Lines[1] = dialogueScript[5].myChoices.GetLines(1,0);
+                    corruptionLevel-=1;
 
                 }else if(GameManager.Instance.GetChoiceValue(507)){
                     dialogueScript[5].Lines[1] = dialogueScript[5].myChoices.GetLines(2,0);
+                    corruptionLevel+=1;
                 }
                 choicesToggled = false;
                 NextLine();
@@ -390,9 +409,21 @@ public class Dialogue : MonoBehaviour
             }else if(textComponent.text == dialogueScript[6].Lines[index]){
                 if( GameManager.Instance.GetChoiceValue(508)){
                     dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(1,0);
+                    corruptionLevel-=1;
+                    //Call good or bad ending 1
+                    if(corruptionLevel<=0){ //Add all orbs have been found
+                        GameManager.Instance.OpenScene("GoodEnding1");
+                    }else{
+                        GameManager.Instance.OpenScene("BadEnding1");
+                    }
 
                 }else if(GameManager.Instance.GetChoiceValue(509)){
                     dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(2,0);
+                    corruptionLevel+=1;
+                    //Call bad ending 2
+                
+                    GameManager.Instance.OpenScene("BadEnding2");
+    
                 }
                 choicesToggled = false;
                 NextLine();
@@ -401,6 +432,32 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+void chapterENDTriggers(){
+        TriggerScriptLine(6,1);
+        
+        if(choicesToggled == true && choiceFunction.choicePressed == false){
+
+            //display the pressed choices dialogue lines
+            
+            if(textComponent.text == dialogueScript[0].Lines[index]){ //maybe this will work?
+                if( GameManager.Instance.GetChoiceValue(510)){
+                    dialogueScript[0].Lines[1] = dialogueScript[0].myChoices.GetLines(1,0);
+        
+                }else if(GameManager.Instance.GetChoiceValue(511)){
+                    dialogueScript[0].Lines[1] = dialogueScript[0].myChoices.GetLines(2,0);
+                }
+                choicesToggled = false;
+                NextLine();
+
+                //play animation?
+                if (animator != null && (currentScript== 1 || index== 1)){
+                    // Trigger animation using the provided trigger name
+                    animator.SetTrigger("GoodEnding");
+                    }
+            
+            }
+        }
+    }
     private void TriggerScriptLine(int chap, int curIndx){
         // Debug.Log("in TriggerScriptLine " + "chap: "+ chap + ", curIndx: " + curIndx + ", isToggled: " + isToggled + ", currentScript: " + curIndx);
 
