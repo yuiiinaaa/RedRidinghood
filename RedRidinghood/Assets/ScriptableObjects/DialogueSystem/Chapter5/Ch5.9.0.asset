@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1b31b2b21c7495388a3ae53d6338e6, type: 3}
   m_Name: Ch5.9.0
   m_EditorClassIdentifier: 
-  hasChoice: 1
-  myChoices: {fileID: 11400000, guid: efb06255269db4fa383d43fc4fcf031b, type: 2}
+  hasChoice: 0
+  myChoices: {fileID: 0}
   name: 
   isTriggered: 0
   Lines:

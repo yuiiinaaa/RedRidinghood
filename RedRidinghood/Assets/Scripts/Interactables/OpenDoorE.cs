@@ -11,7 +11,7 @@ public class OpenDoorE : MonoBehaviour,  IInteractable
     public AudioClip interactSound; // Sound effect to play when interacted with
     // Start is called before the first frame update
     void Awake(){
-        GameManager.Instance.SetCutsceneTrigger(false);
+        //GameManager.Instance.SetCutsceneTrigger(false);
 
     }
      public bool Interact(Interactor interactor)
