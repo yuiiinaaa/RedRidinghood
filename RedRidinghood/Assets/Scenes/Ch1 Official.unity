@@ -1176,6 +1176,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 312461237}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &312461239 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7038804322612568501, guid: 8d3821259dcdc4876be038ae3bb2956c,
+    type: 3}
+  m_PrefabInstance: {fileID: 312461237}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &359802275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6929457544769908805, guid: e001f8329d03c40088a7ff598cfcf040,
@@ -1752,6 +1758,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5958517747326784623, guid: e80e7e9101eda4e019306cfe24dd8344,
+        type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 312461239}
     - target: {fileID: 7714858517513529196, guid: e80e7e9101eda4e019306cfe24dd8344,
         type: 3}
       propertyPath: m_Name
