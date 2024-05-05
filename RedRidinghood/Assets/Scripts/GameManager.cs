@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
+    public Animator transition;
     public static GameManager Instance;
     static string previousScene;
     public PlayerInventory inv;
@@ -241,11 +242,12 @@ public class GameManager : MonoBehaviour
 
     public void OpenScene(string levelName){
         previousScene = SceneManager.GetActiveScene ().name;
-        SceneManager.LoadScene(levelName);
+        StartCoroutine(loadScene(levelName));
+       
     }
 
     public void OpenPrevScene(){
-        SceneManager.LoadScene(previousScene);
+       StartCoroutine(loadScene(previousScene));
     }
 
     public void OpenLevel(int i){
@@ -284,13 +286,17 @@ public class GameManager : MonoBehaviour
             }
         }
         if(lastLvl == 0){
-            SceneManager.LoadScene("Ch1 Official");
+            StartCoroutine(loadScene("Ch1 Official"));
+            
         }else if(lastLvl == 1){
-            SceneManager.LoadScene("Ch2 Official");
+            StartCoroutine(loadScene("Ch2 Official"));
+            
         }else if(lastLvl == 2){
-            SceneManager.LoadScene("Ch3 Official");
+            StartCoroutine(loadScene("Ch3 Official"));
+           
         }else if(lastLvl == 3){
-            SceneManager.LoadScene("Ch5 Official");
+            StartCoroutine(loadScene("Ch5 S1"));
+           
         }
     }
 
@@ -338,6 +344,14 @@ public class GameManager : MonoBehaviour
     public void QuitGame(){
         Application.Quit();
     }  
+
+    IEnumerator loadScene(string scene){
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene(scene);
+    }
 }
 
 public enum GameState{
