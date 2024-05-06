@@ -295,7 +295,7 @@ PrefabInstance:
     - target: {fileID: 3106492356252825989, guid: ee17f8c02b65743c885c358bfd4eecf6,
         type: 3}
       propertyPath: m_text
-      value: 'Chapter 4
+      value: 'Chapter 5
 
 '
       objectReference: {fileID: 0}
