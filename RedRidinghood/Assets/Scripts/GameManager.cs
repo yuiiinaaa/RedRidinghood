@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     // for all triggers for choice dialogue
     public static Dictionary<int, bool> choicesSelected = new Dictionary<int, bool>();
 
+     //unlocked glowOrbs
+    public static List<bool>unlockedOrbs = new List<bool>();
+
     private static bool insideCutscene;
     //public static event Action<GameState> OnGameStateChanged;
     private GameObject instantiatedCanvas;
@@ -71,6 +74,11 @@ public class GameManager : MonoBehaviour
             {
                 choicesSelected.Add(key, false);
             }
+        }
+
+        //creating the list of glow orbs
+        for (int i = 0; i<4; i++){
+            unlockedOrbs.Add(false);
         }
 
         // Setting cinemachine far clip plane
@@ -275,6 +283,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetUnlockOrb(int i){
+        unlockedOrbs[i] = true;
+    }
+
+    public bool GetUnlockOrb(int i){
+        return unlockedOrbs[i];
+    }
+
     public async void OpenLastPlayedLevel(){
         int lastLvl = 0;
 
@@ -346,10 +362,12 @@ public class GameManager : MonoBehaviour
     }  
 
     IEnumerator loadScene(string scene){
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(2f);
-
+        if( transition != null){
+            transition.SetTrigger("Start");
+            yield return new WaitForSeconds(2f);
+        }else{
+            yield return new WaitForSeconds(0f);
+        }
         SceneManager.LoadScene(scene);
     }
 }
