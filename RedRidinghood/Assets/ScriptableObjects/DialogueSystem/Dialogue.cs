@@ -18,6 +18,10 @@ public class Dialogue : MonoBehaviour
 
     private int corruptionLevel;
 
+    // inventory for flower count
+    public PlayerInventory inv;
+
+
     //for the choices mechanic
     private DisplayChoices choiceFunction;
     // Start is called before the first frame update
@@ -337,10 +341,16 @@ public class Dialogue : MonoBehaviour
                 }
             }
 
+            // Tulips or black roses?
             else if (textComponent.text == dialogueScript[6].Lines[index])
             {
                 if (GameManager.Instance.GetChoiceValue(306)) {
                     dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(1, 0);
+                    if (inv.tulipAmount < 3)
+                    {
+                        dialogueScript[6].Lines[1] = "But you didn't pick enough...";
+                        corruptionLevel -= 3;
+                    }
                     corruptionLevel += 3;
                 }
                 else if (GameManager.Instance.GetChoiceValue(307)) {
@@ -348,16 +358,23 @@ public class Dialogue : MonoBehaviour
                     corruptionLevel -= 3;
                 }
                 Debug.Log("corruptionLevel: " + corruptionLevel);
+                inv.ResetTulipBlackrose();
                 choicesToggled = false;
                 NextLine();
                 GameManager.Instance.SetTrigger(3, 7, true);
             }
 
+            // Lavenders or Sunflowers?
             else if (textComponent.text == dialogueScript[7].Lines[index])
             {
                 if (GameManager.Instance.GetChoiceValue(308))
                 {
                     dialogueScript[7].Lines[1] = dialogueScript[7].myChoices.GetLines(1, 0);
+                    if (inv.lavenderAmount < 3 || inv.sunflowerAmount <3)
+                    {
+                        dialogueScript[6].Lines[1] = "But you didn't pick enough...";
+                        corruptionLevel -= 3;
+                    }
                     corruptionLevel += 3;
                 }
                 else if (GameManager.Instance.GetChoiceValue(309))
@@ -366,23 +383,32 @@ public class Dialogue : MonoBehaviour
                     corruptionLevel -= 3;
                 }
                 Debug.Log("corruptionLevel: " + corruptionLevel);
+                inv.ResetLavenderSunflower();
                 choicesToggled = false;
                 NextLine();
                 GameManager.Instance.SetTrigger(3, 8, true);
             }
+
+            //And finally, Lily of the vallies or Lilies?
             else if (textComponent.text == dialogueScript[8].Lines[index])
             {
                 if (GameManager.Instance.GetChoiceValue(310))
                 {
-                    dialogueScript[7].Lines[1] = dialogueScript[8].myChoices.GetLines(1, 0);
+                    dialogueScript[8].Lines[1] = dialogueScript[8].myChoices.GetLines(1, 0);
+                    if (inv.lovAmount < 3)
+                    {
+                        dialogueScript[6].Lines[1] = "But you didn't pick enough...";
+                        corruptionLevel -= 3;
+                    }
                     corruptionLevel += 3;
                 }
                 else if (GameManager.Instance.GetChoiceValue(311))
                 {
-                    dialogueScript[7].Lines[1] = dialogueScript[8].myChoices.GetLines(2, 0);
+                    dialogueScript[8].Lines[1] = dialogueScript[8].myChoices.GetLines(2, 0);
                     corruptionLevel -= 3;
                 }
                 Debug.Log("corruptionLevel: " + corruptionLevel);
+                inv.ResetLovLily();
                 choicesToggled = false;
                 NextLine();
                 GameManager.Instance.SetTrigger(3, 9, true);
