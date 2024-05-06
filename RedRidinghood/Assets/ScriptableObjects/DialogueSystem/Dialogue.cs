@@ -111,6 +111,8 @@ public class Dialogue : MonoBehaviour
                 chapter2Triggers();
             } else if (currentChapter == "3") {
                 chapter3Triggers();
+            } else if (currentChapter == "4") {
+                chapter4Triggers();
             } else if (currentChapter == "5.8") {
                 chapter5Triggers();
             } else if (currentChapter == "GE") {
@@ -253,6 +255,25 @@ public class Dialogue : MonoBehaviour
 
         }
 
+    }
+
+    void chapter4Triggers(){
+        TriggerScriptLine(4, 1);
+
+        if (choicesToggled == true && choiceFunction.choicePressed == false) {
+            //display the pressed choices dialogue lines
+            if (textComponent.text == dialogueScript[1].Lines[index]) { //maybe this will work?
+                if (GameManager.Instance.GetChoiceValue(400)) {
+                    dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(1, 0);
+
+                } else if (GameManager.Instance.GetChoiceValue(401)) {
+                    dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(2, 0);
+                }
+                choicesToggled = false;
+                NextLine();
+                GameManager.Instance.SetTrigger(4, 2, true);
+            }
+        }
     }
 
     void chapter3Triggers()

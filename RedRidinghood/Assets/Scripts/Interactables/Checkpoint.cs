@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour, IInteractable
     public AudioClip interactSound;
     private GameObject glowObject;
     private GameObject darkObject;
+    public int checkpointID;
 
 
     [SerializeField] private string _prompt;
@@ -24,6 +25,14 @@ public class Checkpoint : MonoBehaviour, IInteractable
                 AudioSource.PlayClipAtPoint(interactSound, transform.position);
                 Debug.Log("Toggle Checkpoint!");
                 GameManager.Instance.SetTrigger(1, 4,true);
+                GameManager.Instance.SetUnlockOrb(checkpointID);
+               
+               //chapter specific checkpoint triggers
+                if(checkpointID == 0){
+                    GameManager.Instance.SetTrigger(1, 4,true);
+                }else if (checkpointID == 3){
+                    GameManager.Instance.SetTrigger(4, 1,true);
+                }
             }else{
                 Debug.Log("Not enough flowers!");
             }

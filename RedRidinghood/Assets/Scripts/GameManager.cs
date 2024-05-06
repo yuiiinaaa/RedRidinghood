@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public static List<bool>ch1Trigger = new List<bool>();
     public static List<bool>ch2Trigger = new List<bool>();
     public static List<bool>ch3Trigger = new List<bool>();
+    public static List<bool>ch4Trigger = new List<bool>();
     public static List<bool>ch5Trigger = new List<bool>();
 
     public static List<bool>chEndTrigger = new List<bool>();
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     public static Dictionary<int, bool> choicesSelected = new Dictionary<int, bool>();
 
      //unlocked glowOrbs
-    public static List<bool>unlockedOrbs = new List<bool>();
+    [SerializeField] public static List<bool>unlockedOrbs = new List<bool>();
 
     private static bool insideCutscene;
     //public static event Action<GameState> OnGameStateChanged;
@@ -68,6 +69,14 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        for (int key = 400; key <= 410; key++)
+        {
+            if (!choicesSelected.ContainsKey(key))
+            {
+                choicesSelected.Add(key, false);
+            }
+        }
+
         for (int key = 500; key <= 512; key++)
         {
             if (!choicesSelected.ContainsKey(key))
@@ -77,7 +86,7 @@ public class GameManager : MonoBehaviour
         }
 
         //creating the list of glow orbs
-        for (int i = 0; i<4; i++){
+        for (int i = 0; i<5; i++){
             unlockedOrbs.Add(false);
         }
 
@@ -102,17 +111,19 @@ public class GameManager : MonoBehaviour
             ch1Trigger.Add(false);
             ch2Trigger.Add(false);
             ch3Trigger.Add(false);
+            ch4Trigger.Add(false);
             ch5Trigger.Add(false);
             chEndTrigger.Add(false);
         }
         ch1Trigger[0] = true;
         ch2Trigger[0] = true;
         ch3Trigger[0] = true;
+        ch4Trigger[0] = true;
         ch5Trigger[0] = true;
         chEndTrigger[0] = true;
 
         //THIS IS JUST FOR DEBUGGING FOR CH2, DELETE LATER PLS
-        ch2Trigger[1] = true;
+        //ch2Trigger[1] = true;
         ch3Trigger[1] = true;
         ch5Trigger[1] = true;
         chEndTrigger[1] = true;
@@ -197,6 +208,10 @@ public class GameManager : MonoBehaviour
         {
             ch3Trigger[indx] = b;
         }
+        if (num == 4)
+        {
+            ch4Trigger[indx] = b;
+        }
         if (num == 5)
         {
             ch5Trigger[indx] = b;
@@ -215,6 +230,9 @@ public class GameManager : MonoBehaviour
         }
         if (num == 3) {
             return ch3Trigger[indx];
+        }
+        if (num == 4) {
+            return ch4Trigger[indx];
         }
         if (num == 5) {
             return ch5Trigger[indx];
@@ -277,9 +295,9 @@ public class GameManager : MonoBehaviour
         }else if(SceneManager.GetActiveScene ().name == "Ch3 Official"){
             levelUnlock[2] = true;
         }else if(SceneManager.GetActiveScene ().name == "Ch4 Official"){
-            //levelUnlock[3] = true;
-        }else if(SceneManager.GetActiveScene ().name == "Ch5 Official"){
             levelUnlock[3] = true;
+        }else if(SceneManager.GetActiveScene ().name == "Ch5 S1"){
+            levelUnlock[4] = true;
         }
     }
 
@@ -343,6 +361,12 @@ public class GameManager : MonoBehaviour
         {
             ch3Trigger[i] = false;
         }
+
+        for (int i = 0; i < ch4Trigger.Count; i++)
+        {
+            ch4Trigger[i] = false;
+        }
+
         for (int i = 0; i < ch5Trigger.Count; i++)
         {
             ch5Trigger[i] = false;
