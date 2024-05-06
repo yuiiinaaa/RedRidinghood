@@ -216,6 +216,7 @@ public class Dialogue : MonoBehaviour
         TriggerScriptLine(2, 2);
         TriggerScriptLine(2, 3);
         //TriggerScriptLine(2,4);
+        
 
         if (choicesToggled == true && choiceFunction.choicePressed == false) {
             //display the pressed choices dialogue lines
@@ -446,11 +447,32 @@ public class Dialogue : MonoBehaviour
         TriggerScriptLine(5, 6);
         //TriggerScriptLine(5,6);
 
+        if (textComponent.text == dialogueScript[1].Lines[0]) {
+            if (animator != null) { 
+                // Trigger animation using the provided trigger name
+                animator.SetTrigger("PFP1");
+                }
+            }else if(textComponent.text == dialogueScript[2].Lines[0]){
+                if (animator != null) { 
+                // Trigger animation using the provided trigger name
+                animator.SetTrigger("PFP2");
+                }
+
+            }else if(textComponent.text == dialogueScript[3].Lines[0]){
+                if (animator != null) { 
+                // Trigger animation using the provided trigger name
+                animator.SetTrigger("PFP3");
+                }
+
+            }
+
         if (choicesToggled == true && choiceFunction.choicePressed == false) {
 
             //display the pressed choices dialogue lines
             //Ch5.8.1
             if (textComponent.text == dialogueScript[1].Lines[index]) { //maybe this will work?
+
+            
                 if (GameManager.Instance.GetChoiceValue(502)) {
                     dialogueScript[1].Lines[1] = dialogueScript[1].myChoices.GetLines(1, 0);
                     corruptionLevel -= 1;
@@ -467,6 +489,7 @@ public class Dialogue : MonoBehaviour
 
                 //Ch5.8.3
             } else if (textComponent.text == dialogueScript[3].Lines[index]) {
+                    
                 if (GameManager.Instance.GetChoiceValue(504)) {
                     dialogueScript[3].Lines[1] = dialogueScript[3].myChoices.GetLines(1, 0);
                     corruptionLevel -= 1;
