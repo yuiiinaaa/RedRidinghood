@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20cae1b61f3d4557961d068c86690c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inv: {fileID: 11400000, guid: 4499db52ece81445ca6e33909f8f07b6, type: 2}
+  interactSound: {fileID: 8300000, guid: 5d68f173ec9224769ab0a59b29c76c7c, type: 3}
   _prompt: TogglePoint
 --- !u!65 &322465806846266204
 BoxCollider:

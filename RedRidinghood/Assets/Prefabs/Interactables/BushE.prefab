@@ -120,6 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prompt: 
+  hidingDelay: 6
   hideAudio: {fileID: 8300000, guid: 001cf62c186164b72b72dc06f99d096f, type: 3}
-  player: {fileID: 0}
   playerToggle: 0

@@ -14,10 +14,14 @@ public class Ch2FinalTrigger : MonoBehaviour
         {
             gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         }
+        else
+        {
+            Debug.Log("NO GAME MANAGER - Ch2FinalTrigger");
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (gm != null) { Debug.Log("NO GAME MANAGER - Ch2FinalTrigger"); }
+        if (gm == null) { Debug.Log("NO GAME MANAGER SCRIPT - Ch2FinalTrigger"); }
         else
         {
             gm.OpenScene("Ch3");
