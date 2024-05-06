@@ -48,7 +48,7 @@ public class TriggerJumpscare : MonoBehaviour
 
             if(doorsOpened>=maxDoors){
                 doorsOpened = 0;
-                StartCoroutine(GameOver());
+                //StartCoroutine(GameOver());
             }
         }
     }
