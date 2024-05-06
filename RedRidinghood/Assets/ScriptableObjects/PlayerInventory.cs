@@ -22,6 +22,7 @@ public class PlayerInventory : ScriptableObject
     public int sunflowerAmount;
     public int blackroseAmount;
 
+
     public void AddFlowerAmount(int value){
         if(flowerAmount < maxGlow){
             flowerAmount += value;
@@ -50,6 +51,7 @@ public class PlayerInventory : ScriptableObject
             note.hasBeenFound = false;
         }
     }
+
 
     public void AddLavenderAmount(int value)
     {
@@ -125,6 +127,24 @@ public class PlayerInventory : ScriptableObject
         {
             blackroseAmount -= value;
         }
+    }
+
+    public void ResetTulipBlackrose()
+    {
+        tulipAmount = 0;
+        blackroseAmount = 0;
+    }
+
+    public void ResetLavenderSunflower()
+    {
+        lavenderAmount = 0;
+        sunflowerAmount = 0;
+    }
+
+    public void ResetLovLily()
+    {
+        lovAmount = 0;
+        lilyAmount = 0;
     }
 
 }
