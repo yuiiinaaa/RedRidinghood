@@ -8,10 +8,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4843872962643370003, guid: 969a76a8bcc0049068237a1b68326dae,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843872962643370003, guid: 969a76a8bcc0049068237a1b68326dae,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6460206134996080370, guid: 969a76a8bcc0049068237a1b68326dae,
         type: 3}
       propertyPath: m_Name
-      value: CanvasNote0
+      value: CanvasDrawing3
       objectReference: {fileID: 0}
     - target: {fileID: 7460095158524847331, guid: 969a76a8bcc0049068237a1b68326dae,
         type: 3}
@@ -113,6 +123,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7904756743827327357, guid: 969a76a8bcc0049068237a1b68326dae,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904756743827327357, guid: 969a76a8bcc0049068237a1b68326dae,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -17769207, guid: 44d0b855a492f45d89e1eb4cd8c13df3,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

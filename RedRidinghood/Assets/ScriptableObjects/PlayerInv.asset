@@ -24,6 +24,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5518ec470af86e244a4c4e44a19c6d8b, type: 2}
   - {fileID: 11400000, guid: 2c3dfc6c024ec974187cbfda66cf661c, type: 2}
   - {fileID: 11400000, guid: 26ea2e8a7d63d194c9981bdecea05992, type: 2}
+  - {fileID: 11400000, guid: b8f653302dfc94dc2a8760b25f973774, type: 2}
+  - {fileID: 11400000, guid: a4c6fb493c91d4b63844ca17fdb5ebb7, type: 2}
+  - {fileID: 11400000, guid: 6d9590bed5b7145e2aa912eab427d751, type: 2}
+  - {fileID: 11400000, guid: 5a804486674db4a7dbda5c567b6fc5bb, type: 2}
+  - {fileID: 11400000, guid: e4f59cda2660e49d99623ce6d60c5001, type: 2}
   flowerAmount: 1
   maxGlow: 10
   lavenderAmount: 0

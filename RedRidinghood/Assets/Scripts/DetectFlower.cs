@@ -7,6 +7,11 @@ public class InteractableDetector : MonoBehaviour
     public float detectionRange = 5f; // Range within which to detect Interactable objects
     public GameObject replacementPrefab; // Prefab to instantiate when an Interactable object is destroyed
     public bool flowerPlaced;
+    public AudioClip interactSound;
+    public PlayerInventory inv;
+    public int noteID;
+
+    private GameObject instantiatedCanvas; // Reference to the instantiated canvas
 
     void Start(){
         flowerPlaced = false;
@@ -14,22 +19,21 @@ public class InteractableDetector : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("GlowFlower"))
+        if (other.gameObject.tag == "GlowFlower")
         {
-            Debug.Log("Hi");
             if(!flowerPlaced){
             // Destroy the detected Interactable object
-            Destroy(other.gameObject);
+                //Destroy(other.gameObject);
+                if (interactSound != null){
+                    AudioSource.PlayClipAtPoint(interactSound, transform.position);
+                }
+                // Instantiate the canvas prefab
+                instantiatedCanvas = Instantiate(replacementPrefab);
+                GameManager.Instance.setCanvasNote(instantiatedCanvas);
+                //add note to inv
+                inv.FoundNote(noteID);
 
-            // Instantiate a new object as replacement
-            if (replacementPrefab != null){
-                Instantiate(replacementPrefab, other.transform.position, other.transform.rotation);
-            }
-            else{
-                Debug.LogWarning("Replacement prefab is not assigned.");
-            }
-
-            flowerPlaced = true;
+                flowerPlaced = true;
 
             }
             
