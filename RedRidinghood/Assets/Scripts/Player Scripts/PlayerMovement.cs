@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             playerFrozen = true;
+            walkSound.Stop();
 
             m_Animator.SetBool("Forward", false);
             m_Animator.SetBool("Right", false);
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             m_Animator.SetBool("Torwards", false);
             walkToggle = false;
         }
+
     }
 
     void UpdateMovement(){
