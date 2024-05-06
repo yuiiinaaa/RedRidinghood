@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class SimpleStateMachine : MonoBehaviour
 {
-    //public Vector3 enemyInitialPosition = new Vector3(-26,0,45);
+    private AudioSource sound;
     private SpriteRenderer sr;
 
     //  State Machine Variables
@@ -24,17 +24,17 @@ public class SimpleStateMachine : MonoBehaviour
     public static float visionAngleRange = 180f; // SINCE WE CHANGE THIS ONE IN THE SCRIPT, IDK IF IT WORKS AS STATIC
 
     // Enemy abilities
-    public float patrolSpeed = 7f;
-    public float attackSpeed = 10f;
-    public float searchSpeed = 5f;
+    public float patrolSpeed;
+    public float attackSpeed;
+    public float searchSpeed;
 
-    public float patrolAngularSpeed = 240f;
-    public float attackAngularSpeed = 200f;
-    public float searchAngularSpeed = 240f;
+    public float patrolAngularSpeed;
+    public float attackAngularSpeed;
+    public float searchAngularSpeed;
 
-    public float patrolAcceleration = 12f;
-    public float attackAcceleration = 8f;
-    public float searchAcceleration = 16f;
+    public float patrolAcceleration;
+    public float attackAcceleration;
+    public float searchAcceleration;
 
     public float stopDistance = 0.5f;
 
@@ -45,6 +45,7 @@ public class SimpleStateMachine : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         targetMovementScript = target.GetComponent<PlayerMovement>();
         sr = GetComponent<SpriteRenderer>();
+        sound = GetComponent<AudioSource>();
 
         // Disabling auto-braking allows for continuous movement
         // between points (ie, the agent doesn't slow down as it
@@ -64,8 +65,19 @@ public class SimpleStateMachine : MonoBehaviour
         //}
         StateMachine();
         sr.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        
+        PlayWalkingSound();
 
     }
+
+    private void PlayWalkingSound()
+    {
+        if (!sound.isPlaying)
+        {
+            sound.Play();
+        }
+    }
+
 
     /*
      * StateMachine controls which state the enemy will be
@@ -114,7 +126,7 @@ public class SimpleStateMachine : MonoBehaviour
         // Attack State
         if (SeesPlayer())
         {
-            SetAgentMovement(10f, 200f, 8f, 0.5f);
+            SetAgentMovement(attackSpeed, attackAngularSpeed, attackAcceleration, stopDistance);
             //visionAngleRange = 180f;
             GoToState(State.Attack);
         }
@@ -127,7 +139,7 @@ public class SimpleStateMachine : MonoBehaviour
 
         if (!SeesPlayer()) // Search State
         {
-            SetAgentMovement(5f, 240f, 16f, 0.5f);
+            SetAgentMovement(searchSpeed, searchAngularSpeed, searchAcceleration, stopDistance);
             //visionAngleRange = 90f;
             clockTime = Time.time;
             GoToState(State.Search);
@@ -150,14 +162,14 @@ public class SimpleStateMachine : MonoBehaviour
 
         if (SeesPlayer()) // Attack State
         {
-            SetAgentMovement(10f, 200f, 8f, 0.5f);
+            SetAgentMovement(attackSpeed, attackAngularSpeed, attackAcceleration, stopDistance);
             //visionAngleRange = 180f;
             GoToState(State.Attack);
         }
 
         if (clockTime + searchingDelay < Time.time) // Patrol State
         {
-            SetAgentMovement(7f, 240f, 12f, 0.5f);
+            SetAgentMovement(patrolSpeed, patrolAngularSpeed, patrolAcceleration, stopDistance);
             //visionAngleRange = 90f;
             GoToState(State.Patrol);
         }

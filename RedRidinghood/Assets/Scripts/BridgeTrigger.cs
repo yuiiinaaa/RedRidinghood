@@ -19,6 +19,12 @@ public class BridgeTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            OpenBridge();
+        }
+    }
+
+    void OpenBridge()
+    {
             if (inv.flowerAmount >= 5)
             {
                 inv.RemoveFlowerAmount(5);
@@ -34,6 +40,6 @@ public class BridgeTrigger : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
-        }
+        
     }
 }

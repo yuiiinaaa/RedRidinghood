@@ -7,7 +7,7 @@ public class HidingE : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
     public string InteractionPrompt => _prompt;
-    public float hidingDelay = 5f;
+    public float hidingDelay;
 
     public AudioClip hideAudio;
     //public GameObject playerActive;
@@ -18,7 +18,7 @@ public class HidingE : MonoBehaviour, IInteractable
 
     void Start()
     {
-        playerToggle = true;
+        playerToggle = false;
         player = GameObject.FindGameObjectWithTag("Player");
         //PlayerMovement player = GetComponent<PlayerMovement>();
     }
@@ -27,6 +27,7 @@ public class HidingE : MonoBehaviour, IInteractable
         // Play sound effect if assigned
 
         StartCoroutine(Hide());
+
         //if (hideAudio != null){
         //    AudioSource.PlayClipAtPoint(hideAudio, transform.position);
         //}

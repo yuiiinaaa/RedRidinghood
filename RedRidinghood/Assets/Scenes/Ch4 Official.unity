@@ -295,7 +295,7 @@ PrefabInstance:
     - target: {fileID: 3106492356252825989, guid: ee17f8c02b65743c885c358bfd4eecf6,
         type: 3}
       propertyPath: m_text
-      value: 'Chapter 4
+      value: 'Chapter 5
 
 '
       objectReference: {fileID: 0}
@@ -3838,7 +3838,7 @@ PrefabInstance:
     - target: {fileID: 2666045459347997924, guid: 0beb83ac1b08d42a2af6f3cab79af075,
         type: 3}
       propertyPath: currentChapter
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2666045459347997924, guid: 0beb83ac1b08d42a2af6f3cab79af075,
         type: 3}
