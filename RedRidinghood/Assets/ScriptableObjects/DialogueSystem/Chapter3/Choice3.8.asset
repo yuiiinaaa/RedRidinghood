@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca9ca2d682f204aa293a8ed94347c6c8, type: 3}
-  m_Name: Choice3.6
+  m_Name: Choice3.8
   m_EditorClassIdentifier: 
   isTriggered: 0
-  leftID: 306
-  rightID: 307
-  leftChoice: '"Tulips!"'
-  rightChoice: '"Black roses!"'
+  leftID: 310
+  rightID: 311
+  leftChoice: '"Lily of the valeys"'
+  rightChoice: '"Lillies"'
   LinesL:
-  - Good.
+  - It looks like you've made a nice bouquet.
   LinesR:
-  - Hmm...are you sure?
+  - Granny won't be too happy...

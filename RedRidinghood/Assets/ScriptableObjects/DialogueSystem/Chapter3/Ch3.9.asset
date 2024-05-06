@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca9ca2d682f204aa293a8ed94347c6c8, type: 3}
-  m_Name: Choice3.6
+  m_Script: {fileID: 11500000, guid: 8c1b31b2b21c7495388a3ae53d6338e6, type: 3}
+  m_Name: Ch3.9
   m_EditorClassIdentifier: 
+  hasChoice: 0
+  myChoices: {fileID: 0}
+  name: 
   isTriggered: 0
-  leftID: 306
-  rightID: 307
-  leftChoice: '"Tulips!"'
-  rightChoice: '"Black roses!"'
-  LinesL:
-  - Good.
-  LinesR:
-  - Hmm...are you sure?
+  Lines:
+  - Well well well... now that you have a bouquet, let's get you to the next chapter.
