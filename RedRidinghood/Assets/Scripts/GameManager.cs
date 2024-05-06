@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         instantiatedCanvas = null;
 
         /** Delete ???? */
-        inv.resetInv();
+        //inv.resetInv();
         /****************/
         
     }

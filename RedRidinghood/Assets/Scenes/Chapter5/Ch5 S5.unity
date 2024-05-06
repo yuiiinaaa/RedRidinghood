@@ -2734,6 +2734,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 792942704}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &792942706 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7038804322612568501, guid: 8d3821259dcdc4876be038ae3bb2956c,
+    type: 3}
+  m_PrefabInstance: {fileID: 792942704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &874711609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4081,7 +4087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4972951331e40cdaecb01a4585f56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  transition: {fileID: 792942706}
   inv: {fileID: 11400000, guid: 4499db52ece81445ca6e33909f8f07b6, type: 2}
   State: 0
 --- !u!4 &1715724605
