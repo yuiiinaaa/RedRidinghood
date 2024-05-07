@@ -89,29 +89,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3296878853485280664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e5f7151230302944a7c69552eb2aa12, type: 3}
+  m_Script: {fileID: 11500000, guid: 92c8298805aa84e1eae07f710e185416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
   searchingDelay: 10
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  patrolSpeed: 1
-  attackSpeed: 1
-  searchSpeed: 1
-  patrolAngularSpeed: 240
-  attackAngularSpeed: 800
-  searchAngularSpeed: 240
-  patrolAcceleration: 12
-  attackAcceleration: 50
-  searchAcceleration: 16
+  patrolPoints: []
+  patrolSpeed: 0
+  attackSpeed: 0
+  searchSpeed: 0
+  patrolAngularSpeed: 0
+  attackAngularSpeed: 0
+  searchAngularSpeed: 0
+  patrolAcceleration: 0
+  attackAcceleration: 0
+  searchAcceleration: 0
   stopDistance: 0.5
 --- !u!212 &-6454231741362143534
 SpriteRenderer:
@@ -162,7 +154,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!82 &-8221103156110443700
