@@ -24,7 +24,7 @@ public class Ch2FinalTrigger : MonoBehaviour
         if (gm == null) { Debug.Log("NO GAME MANAGER SCRIPT - Ch2FinalTrigger"); }
         else
         {
-            gm.OpenScene("Ch3");
+            gm.OpenScene("Ch3 Official");
         }
     }
 }
