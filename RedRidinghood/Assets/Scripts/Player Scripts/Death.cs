@@ -10,7 +10,7 @@ public class Death : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        //gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     private void Update()
