@@ -17,6 +17,9 @@ MonoBehaviour:
   name: 
   isTriggered: 0
   Lines:
-  - "There is something odd going on in this forest, I can\u2019t quite figure out
-    what it is. Let\u2019s try to make it out of here quickly, okay? \n"
-  - If you keep going straight, we might be able to find a way out.
+  - ............
+  - "There is something odd going on in this forest... let\u2019s try to make it
+    out of here quickly, okay? \n"
+  - You can hide from it by pressing "e" near the bushes.
+  - Remember to collect 5 glow flowers to cross the bridge...
+  - ...and find the next glow orb. Don't die!!
