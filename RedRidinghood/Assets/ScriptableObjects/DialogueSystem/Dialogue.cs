@@ -54,6 +54,7 @@ public class Dialogue : MonoBehaviour
         choicesToggled = false;
 
         if (dialogueScript.Count > 0) {
+            GameManager.Instance.SetCutsceneTrigger(true);
             StartDialogue();
         } else {
             isToggled = false;
@@ -438,7 +439,7 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void chapter5Triggers() {
+    async void chapter5Triggers() {
         TriggerScriptLine(5, 1);
         TriggerScriptLine(5, 2);
         TriggerScriptLine(5, 3);
@@ -522,7 +523,18 @@ public class Dialogue : MonoBehaviour
                     dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(1, 0);
                     corruptionLevel -= 1;
                     //Call good or bad ending 1
-                    if (corruptionLevel <= 0) { //Add all orbs have been found
+                    bool allglow = false;
+
+                    for(int i =0; i<5; i++){
+                        if(GameManager.Instance.GetUnlockOrb[i]){
+                            allglow = true;
+                        }else{
+                            allglow = true;
+                            break;
+
+                        }
+                    }
+                    if (corruptionLevel <= 0 && allglow) { //Add all orbs have been found
                     isToggled = false;
                     ToggleChildren(false);
                         GameManager.Instance.OpenScene("GoodEnding1");

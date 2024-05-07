@@ -25715,6 +25715,18 @@ MonoBehaviour:
   inv: {fileID: 11400000, guid: 4499db52ece81445ca6e33909f8f07b6, type: 2}
   _prompt: 
   interactSound: {fileID: 8300000, guid: bdb426dcf8f11428f8fac3f0f3dea600, type: 3}
+--- !u!114 &1165851488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3165380848370408883, guid: e4fd6843e5763234ca219242f67ce599,
+    type: 3}
+  m_PrefabInstance: {fileID: 1206994561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e075eff0c515d45ffa6b8ebc483c979d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1169453595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7108490291249515825, guid: 118be17932a17574fa5f8838b4b04d5e,
@@ -48734,6 +48746,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9c616b5467a4bd94eac6ca118e70c061,
         type: 2}
+    - target: {fileID: 2709488083223279846, guid: 7428e0808f84b9b46b0b142ba98af7b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1165851488}
+    - target: {fileID: 2709488083223279846, guid: 7428e0808f84b9b46b0b142ba98af7b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleTransparency
+      objectReference: {fileID: 0}
     - target: {fileID: 4521160147877325320, guid: 7428e0808f84b9b46b0b142ba98af7b8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -49150,9 +49172,9 @@ SceneRoots:
   - {fileID: 1040020382}
   - {fileID: 1508014972}
   - {fileID: 1327205907}
+  - {fileID: 8077627972764039959}
   - {fileID: 713033432}
   - {fileID: 424671248}
   - {fileID: 421918625}
   - {fileID: 326478286}
-  - {fileID: 8077627972764039959}
   - {fileID: 498236210}
