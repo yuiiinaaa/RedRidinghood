@@ -526,7 +526,7 @@ public class Dialogue : MonoBehaviour
                     bool allglow = false;
 
                     for(int i =0; i<5; i++){
-                        if(GameManager.Instance.GetUnlockOrb[i]){
+                        if(GameManager.Instance.GetUnlockOrb(i)){
                             allglow = true;
                         }else{
                             allglow = true;
