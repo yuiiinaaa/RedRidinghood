@@ -2836,6 +2836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2666045459347997924, guid: 0beb83ac1b08d42a2af6f3cab79af075,
         type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 937525095}
+    - target: {fileID: 2666045459347997924, guid: 0beb83ac1b08d42a2af6f3cab79af075,
+        type: 3}
       propertyPath: currentChapter
       value: 5.8
       objectReference: {fileID: 0}

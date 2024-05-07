@@ -447,18 +447,18 @@ public class Dialogue : MonoBehaviour
         TriggerScriptLine(5, 6);
         //TriggerScriptLine(5,6);
 
-        if (textComponent.text == dialogueScript[1].Lines[0]) {
+        if (dialogueScript[currentScript].Lines[index] == dialogueScript[1].Lines[0]) {
             if (animator != null) { 
                 // Trigger animation using the provided trigger name
                 animator.SetTrigger("PFP1");
                 }
-            }else if(textComponent.text == dialogueScript[2].Lines[0]){
+            }else if(dialogueScript[currentScript].Lines[index] == dialogueScript[2].Lines[0]){
                 if (animator != null) { 
                 // Trigger animation using the provided trigger name
                 animator.SetTrigger("PFP2");
                 }
 
-            }else if(textComponent.text == dialogueScript[3].Lines[0]){
+            }else if(dialogueScript[currentScript].Lines[index] == dialogueScript[3].Lines[1]){
                 if (animator != null) { 
                 // Trigger animation using the provided trigger name
                 animator.SetTrigger("PFP3");
@@ -523,8 +523,12 @@ public class Dialogue : MonoBehaviour
                     corruptionLevel -= 1;
                     //Call good or bad ending 1
                     if (corruptionLevel <= 0) { //Add all orbs have been found
+                    isToggled = false;
+                    ToggleChildren(false);
                         GameManager.Instance.OpenScene("GoodEnding1");
                     } else {
+                        isToggled = false;
+                        ToggleChildren(false);
                         GameManager.Instance.OpenScene("BadEnding1");
                     }
 
@@ -532,6 +536,8 @@ public class Dialogue : MonoBehaviour
                     dialogueScript[6].Lines[1] = dialogueScript[6].myChoices.GetLines(2, 0);
                     corruptionLevel += 1;
                     //Call bad ending 2
+                    isToggled = false;
+                    ToggleChildren(false);
 
                     GameManager.Instance.OpenScene("BadEnding2");
 
