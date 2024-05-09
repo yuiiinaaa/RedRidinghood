@@ -329,8 +329,10 @@ public class GameManager : MonoBehaviour
             StartCoroutine(loadScene("Ch3 Official"));
            
         }else if(lastLvl == 3){
-            StartCoroutine(loadScene("Ch5 S1"));
-           
+            StartCoroutine(loadScene("Ch4 Official"));  
+        }
+        else if(lastLvl == 4){
+            StartCoroutine(loadScene("Ch5 S1"));  
         }
     }
 
