@@ -14,11 +14,11 @@ the player will find a way to bring light to the land and wake up from the dream
 
 
 # Instructions: 
-WASD or Arrow keys - Move // 
-E - interact with object OR hide in bush // 
-P - Plant a flower // 
-Esc - Exit out of note or lock // 
-Enter/Return - continue dialogue // 
+  WASD or Arrow keys - Move // 
+  E - interact with object OR hide in bush // 
+  P - Plant a flower // 
+  Esc - Exit out of note or lock // 
+  Enter/Return - continue dialogue
 
 # Dialogue and choice system
 The player's choices in the game impact the ending. 
